@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 8f;
     private float JumpingPower = 16f;
     private bool isFacingRight = true;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -31,15 +31,24 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+     private void Start()
+   {
+       rb = GetComponent<Rigidbody2D>();
+   }
+
+
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+
+        Vector2 velocity = rb.velocity;
     }
 
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer) != null;
+        
     }
 
 
