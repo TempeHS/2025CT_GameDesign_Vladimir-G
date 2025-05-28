@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private float wallJumpingCounter;
     private float wallJumpingDuration = 0.5f;
 
+
     private Vector2 wallJumpingPower = new Vector2(8f, 12f);
 
     private bool isFacingRight = true;
@@ -39,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         horizontal = Input.GetAxisRaw("Horizontal");
+        
 
         if (IsGrounded() && !Input.GetButton("Jump"))
         {
@@ -60,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f) 
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
@@ -82,9 +84,6 @@ public class PlayerMovement : MonoBehaviour
             Flip();
         }
     }
-        
-
-
 
     private void Start()
     {
