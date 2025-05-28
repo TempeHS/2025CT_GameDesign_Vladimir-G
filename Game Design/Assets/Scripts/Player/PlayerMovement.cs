@@ -11,9 +11,9 @@ public class PlayerMovement : MonoBehaviour
     private float dashingCooldown = 1f;
     private float wallSlidingSpeed = 2f;
     private float wallJumpingDirection;
-    private float wallJumpingTime = 0.2f;
+    private float wallJumpingTime = 0.4f;
     private float wallJumpingCounter;
-    private float wallJumpingDuration = 0.4f;
+    private float wallJumpingDuration = 0.5f;
 
     private Vector2 wallJumpingPower = new Vector2(8f, 12f);
 
@@ -105,6 +105,11 @@ public class PlayerMovement : MonoBehaviour
             Flip();
         }
 
+        if (isWallJumping)
+        {
+            return;
+        }
+
 
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
 
@@ -139,6 +144,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Flip()
     {
+        if (isWallJumping)
+        {
+            return;
+        }
+
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
             isFacingRight = !isFacingRight;
@@ -153,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
         if (isWallSliding)
         {
             isWallJumping = false;
-            wallJumpingDirection = -transform.localScale.x;
+            wallJumpingDirection = transform.localScale.x > 0 ? -1f : 1f;
             wallJumpingCounter = wallJumpingTime;
 
             CancelInvoke(nameof(StopWallJumping));
@@ -166,6 +176,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0f)
         {
             isWallJumping = true;
+
             rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
             wallJumpingCounter = 0f;
 
