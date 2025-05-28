@@ -4,11 +4,11 @@ using UnityEngine.Rendering;
 public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 8f;
+    private float speed = 6f;
     private float JumpingPower = 16f;
     private bool isFacingRight = true;
-    private Rigidbody2D rb;
 
+    [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer) != null;
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
         
     }
 
