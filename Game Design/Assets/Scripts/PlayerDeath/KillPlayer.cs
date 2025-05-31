@@ -40,7 +40,7 @@ public class PlayerKill : MonoBehaviour
             rb.angularVelocity = 0f;
         }
 
-        GetComponent<PlayerHealth>().health = 6;
-        GetComponent<PlayerHealth>().FullHealth();
+        GetComponent<PlayerHealth>().health= 6;
+        GetComponent<PlayerHealth>().fullHealth();
     }
 }
