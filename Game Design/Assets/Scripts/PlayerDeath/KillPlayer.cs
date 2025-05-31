@@ -22,7 +22,14 @@ public class PlayerKill : MonoBehaviour
 
     void Die()
     {
-        StartCoroutine(Respawn(0.01f));
+        PlayerHealth health = GetComponent<PlayerHealth>();
+        if (health != null)
+        {
+            health.NoHearts();
+
+        }
+
+        StartCoroutine(Respawn(5f));
     }
 
     IEnumerator Respawn(float duration)
