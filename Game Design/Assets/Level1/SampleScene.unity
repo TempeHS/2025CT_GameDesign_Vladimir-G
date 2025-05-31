@@ -1146,10 +1146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d21fc0dff9f84cf49c2e0e13af27b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  heart1: {fileID: 864577820}
-  heart2: {fileID: 457500565}
-  heart3: {fileID: 872970662}
+  health: 8
+  heart1: {fileID: 579731590}
+  heart2: {fileID: 1718489036}
+  heart3: {fileID: 1354880107}
   FullHeart: {fileID: 719373367, guid: d2dfb337a661f4cdfb628ff727e86ddb, type: 3}
   HalfHeart: {fileID: 878195421, guid: d2dfb337a661f4cdfb628ff727e86ddb, type: 3}
   NoHeart: {fileID: 28671770, guid: d2dfb337a661f4cdfb628ff727e86ddb, type: 3}
