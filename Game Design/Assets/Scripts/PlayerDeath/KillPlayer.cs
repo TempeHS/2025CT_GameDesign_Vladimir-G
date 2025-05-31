@@ -4,6 +4,7 @@ using UnityEditor.SearchService;
 using UnityEngine;
 
 public class PlayerKill : MonoBehaviour
+
 {
     Vector2 startPos;
 
@@ -16,20 +17,15 @@ public class PlayerKill : MonoBehaviour
     {
         if (collision.CompareTag("KillZone"))
         {
+            GetComponent<PlayerHealth>().health = 0;
+            GetComponent<PlayerHealth>().noHealth();
             Die();
         }
     }
 
     void Die()
     {
-        PlayerHealth health = GetComponent<PlayerHealth>();
-        if (health != null)
-        {
-            health.NoHearts();
-
-        }
-
-        StartCoroutine(Respawn(5f));
+        StartCoroutine(Respawn(2f));
     }
 
     IEnumerator Respawn(float duration)
@@ -43,5 +39,8 @@ public class PlayerKill : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0f;
         }
+
+        GetComponent<PlayerHealth>().health = 6;
+        GetComponent<PlayerHealth>().FullHealth();
     }
 }
