@@ -17,15 +17,13 @@ public class PlayerKill : MonoBehaviour
     {
         if (collision.CompareTag("KillZone"))
         {
-            GetComponent<PlayerHealth>().health = 0;
-            GetComponent<PlayerHealth>().noHealth();
             Die();
         }
     }
 
     void Die()
     {
-        StartCoroutine(Respawn(2f));
+        StartCoroutine(Respawn(0.2f));
     }
 
     IEnumerator Respawn(float duration)
@@ -39,8 +37,5 @@ public class PlayerKill : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0f;
         }
-
-        GetComponent<PlayerHealth>().health= 6;
-        GetComponent<PlayerHealth>().fullHealth();
     }
 }
