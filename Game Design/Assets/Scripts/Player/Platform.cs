@@ -1,48 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class Platform : MonoBehaviour
+public class DropThrough : MonoBehaviour
 {
-    private GameObject currentOneWayPlatform;
-
-    [SerializeField] private BoxCollider2D playerCollider;
+    [SerializeField] private PlatformEffector2D effector;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.S))
-        {
-            if (currentOneWayPlatform != null)
-            {
-                StartCoroutine(DisableCollision());
-            }
-        }
+            StartCoroutine(Drop());
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private IEnumerator Drop()
     {
-        if (collision.gameObject.CompareTag("OneWayPlatform"))
-        {
-            currentOneWayPlatform = collision.gameObject;
-
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("OneWayPlatform"))
-        {
-            currentOneWayPlatform = null;
-        }
-    }
-
-    private IEnumerator DisableCollision()
-    {
-        BoxCollider2D platformCollider = currentOneWayPlatform.GetComponent<BoxCollider2D>();
-
-        Physics2D.IgnoreCollision(playerCollider, platformCollider);
-        yield return new WaitForSeconds(0.3f);
-        Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
+        effector.enabled = false;  // turn off one‐way for this frame
+        yield return null;         // wait one frame
+        effector.enabled = true;   // restore one‐way
     }
 }
