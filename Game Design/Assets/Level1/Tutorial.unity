@@ -549,6 +549,46 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -1, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 8
+      m_TileSpriteIndex: 8
+      m_TileMatrixIndex: 1
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 0, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 8
+      m_TileSpriteIndex: 8
+      m_TileMatrixIndex: 1
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 1, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 8
+      m_TileSpriteIndex: 8
+      m_TileMatrixIndex: 1
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 2, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 8
+      m_TileSpriteIndex: 8
+      m_TileMatrixIndex: 1
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 0
@@ -567,7 +607,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 4
+  - m_RefCount: 8
     m_Data: {fileID: 11400000, guid: d5c4c559ced6547378f250c4ee31e97f, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -586,7 +626,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 4
+  - m_RefCount: 8
     m_Data: {fileID: -1268363051, guid: e18eac11ce6cd4262a5c373ec2656d80, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 0
@@ -607,7 +647,7 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 4
+  - m_RefCount: 8
     m_Data:
       e00: 1
       e01: 0
@@ -626,7 +666,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 4
+  - m_RefCount: 8
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: 0.87998116, g: 0.3593803, b: 0.477001, a: 1}
@@ -634,7 +674,7 @@ Tilemap:
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -6, y: -5, z: 0}
-  m_Size: {x: 22, y: 7, z: 1}
+  m_Size: {x: 22, y: 9, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -694,6 +734,36 @@ CompositeCollider2D:
   - m_Collider: {fileID: 338675889}
     m_ColliderPaths:
     - - X: 0
+        Y: 35000000
+      - X: 625000
+        Y: 34375000
+      - X: 5625000
+        Y: 34375000
+      - X: 10000000
+        Y: 35000000
+      - X: 10625000
+        Y: 34375000
+      - X: 15625000
+        Y: 34375000
+      - X: 20000000
+        Y: 35000000
+      - X: 20625000
+        Y: 34375000
+      - X: 25625000
+        Y: 34375000
+      - X: 30000000
+        Y: 35000000
+      - X: 30000000
+        Y: 40000000
+      - X: -10000000
+        Y: 40000000
+      - X: -10000000
+        Y: 35000000
+      - X: -9375000
+        Y: 34375000
+      - X: -4375000
+        Y: 34375000
+    - - X: 0
         Y: 5000000
       - X: 625000
         Y: 4375000
@@ -725,6 +795,21 @@ CompositeCollider2D:
         Y: 4375000
   m_CompositePaths:
     m_Paths:
+    - - {x: 0, y: 3.5}
+      - {x: 0.0625, y: 3.4375}
+      - {x: 0.5625, y: 3.4375}
+      - {x: 1, y: 3.5}
+      - {x: 1.0625, y: 3.4375}
+      - {x: 1.5625, y: 3.4375}
+      - {x: 2, y: 3.5}
+      - {x: 2.0625, y: 3.4375}
+      - {x: 2.5625, y: 3.4375}
+      - {x: 3, y: 3.5}
+      - {x: 3, y: 4}
+      - {x: -1, y: 4}
+      - {x: -1, y: 3.5}
+      - {x: -0.9375, y: 3.4375}
+      - {x: -0.4375, y: 3.4375}
     - - {x: 0, y: 0.5}
       - {x: 0.0625, y: 0.4375}
       - {x: 0.5625, y: 0.4375}
@@ -1234,7 +1319,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 118d7bc0c5c9849e786985eb581076dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropDuration: 0.5
   platformCollider: {fileID: 338675892}
 --- !u!114 &743508605
 MonoBehaviour:

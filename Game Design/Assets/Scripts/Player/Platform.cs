@@ -4,8 +4,6 @@ using UnityEngine.Tilemaps;
 
 public class DropThrough : MonoBehaviour
 {
-
-    [SerializeField] private float dropDuration = 0.5f;
     private Collider2D playerCollider;
     [SerializeField] private CompositeCollider2D platformCollider;
 
@@ -22,7 +20,7 @@ public class DropThrough : MonoBehaviour
     private IEnumerator Drop()
     {
         Physics2D.IgnoreCollision(playerCollider, platformCollider, true);
-        yield return new WaitForSeconds(dropDuration);
+        yield return new WaitForSeconds(0.18f);
         Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
     }
 }
