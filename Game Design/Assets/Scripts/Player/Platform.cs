@@ -1,10 +1,18 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class DropThrough : MonoBehaviour
 {
-    [SerializeField] private PlatformEffector2D effector;
 
+    [SerializeField] private float dropDuration = 0.5f;
+    private Collider2D playerCollider;
+    [SerializeField] private CompositeCollider2D platformCollider;
+
+    void Start()
+    {
+        playerCollider = GetComponent<Collider2D>();
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.S))
@@ -13,8 +21,8 @@ public class DropThrough : MonoBehaviour
 
     private IEnumerator Drop()
     {
-        effector.enabled = false;  // turn off one‐way for this frame
-        yield return null;         // wait one frame
-        effector.enabled = true;   // restore one‐way
+        Physics2D.IgnoreCollision(playerCollider, platformCollider, true);
+        yield return new WaitForSeconds(dropDuration);
+        Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
     }
 }
