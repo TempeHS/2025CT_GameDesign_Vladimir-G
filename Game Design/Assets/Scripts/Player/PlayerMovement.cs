@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private TrailRenderer tr;
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private Animator _animator;
 
     void Update()
     {
@@ -40,6 +41,15 @@ public class PlayerMovement : MonoBehaviour
         }
 
         horizontal = Input.GetAxisRaw("Horizontal");
+
+        if (input != 0)
+        {
+            _animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            _animator.SetBool("isRunning", false);
+        }
         
 
         if (IsGrounded() && !Input.GetButton("Jump"))
@@ -111,7 +121,6 @@ public class PlayerMovement : MonoBehaviour
 
 
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-
         Vector2 velocity = rb.velocity;
     }
 
