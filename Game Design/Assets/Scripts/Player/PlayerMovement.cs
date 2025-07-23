@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     private float wallJumpingCounter;
     private float wallJumpingDuration = 0.5f;
 
-
     private Vector2 wallJumpingPower = new Vector2(8f, 12f);
 
     private bool isFacingRight = true;
@@ -33,6 +32,39 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask wallLayer;
     [SerializeField] private Animator _animator;
 
+    Animator animator;
+
+    private bool wasGrounded;
+
+    void SetupAnimation()
+    {
+        horizontal = Input.GetAxisRaw("Horizontal");
+
+        animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
+        animator.SetFloat("yVelocity", rb.velocity.y);
+
+        bool grounded = IsGrounded();
+
+        // Set isJumping true when leaving ground
+        if (!grounded && wasGrounded)
+        {
+            animator.SetBool("isJumping", true);
+        }
+
+        // Set isJumping false when landing
+        if (grounded && !wasGrounded)
+        {
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isDoubleJumping", false);
+            animator.SetBool("isWallJumping", false);
+            Debug.Log("Player landed");
+        }
+
+        animator.SetBool("isWallJumping", isWallJumping);
+
+        wasGrounded = grounded;
+    }
+
     void Update()
     {
         if (isDashing)
@@ -40,39 +72,48 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        horizontal = Input.GetAxisRaw("Horizontal");
-
-        if (input != 0)
-        {
-            _animator.SetBool("isRunning", true);
-        }
-        else
-        {
-            _animator.SetBool("isRunning", false);
-        }
-        
-
         if (IsGrounded() && !Input.GetButton("Jump"))
         {
             doubleJump = false;
         }
 
+        // if (Input.GetButtonDown("Jump"))
+        // {
+        //     if (IsGrounded() || doubleJump)
+        //     {
+        //         rb.velocity = new Vector2(rb.velocity.x, JumpingPower);
+
+        //         doubleJump = !doubleJump;
+
+        //         if ((horizontal < 0f && isFacingRight) || (horizontal > 0f && !isFacingRight))
+        //         {
+        //             Flip();
+        //         }
+        //     }
+        // }
+
         if (Input.GetButtonDown("Jump"))
         {
-            if (IsGrounded() || doubleJump)
+            if (IsGrounded())
             {
                 rb.velocity = new Vector2(rb.velocity.x, JumpingPower);
+                doubleJump = true; // Enable double jump after first jump
+            }
+            else if (doubleJump)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, JumpingPower);
+                doubleJump = false; // Consume double jump
+                animator.SetBool("isDoubleJumping", true);
+                Debug.Log("Player double jumped");
+            }
 
-                doubleJump = !doubleJump;
-
-                if ((horizontal < 0f && isFacingRight) || (horizontal > 0f && !isFacingRight))
-                {
-                    Flip();
-                }
+            if ((horizontal < 0f && isFacingRight) || (horizontal > 0f && !isFacingRight))
+            {
+                Flip();
             }
         }
 
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f) 
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
@@ -93,11 +134,14 @@ public class PlayerMovement : MonoBehaviour
         {
             Flip();
         }
+
+        SetupAnimation();
     }
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
 
@@ -128,7 +172,6 @@ public class PlayerMovement : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-
     }
 
     private bool IsWalled()
@@ -204,7 +247,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isWallJumping = false;
     }
-    
+
     private IEnumerator Dash()
     {
         canDash = false;

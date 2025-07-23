@@ -20,7 +20,7 @@ public class DropThrough : MonoBehaviour
     private IEnumerator Drop()
     {
         Physics2D.IgnoreCollision(playerCollider, platformCollider, true);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.25f);
         Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
     }
 }
