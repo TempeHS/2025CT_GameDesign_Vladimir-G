@@ -42,9 +42,13 @@ public class Health : MonoBehaviour
     private IEnumerator HandleDeath()
     {
         if (gameOverText != null)
-            gameOverText.gameObject.SetActive(true);
-
-        yield return new WaitForSeconds(1f); // Wait for the death animation to finish
+            yield return new WaitForSeconds(1f); // Wait for the death animation to finish
+        gameOverText.gameObject.SetActive(true);
         Destroy(gameObject); // Destroy the player object
+    }
+
+    public void AddHealth(float amount)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, startingHealth);
     }
 }
