@@ -13,10 +13,14 @@ public class Health : MonoBehaviour
     private Animator animator;
     private bool dead;
 
+    public Collider2D playerCollider;
+
     private void Awake()
     {
         currentHealth = startingHealth;
         animator = GetComponent<Animator>();
+        playerCollider = GetComponent<Collider2D>();
+
     }
 
     public void TakeDamage(float _damage)
@@ -26,6 +30,7 @@ public class Health : MonoBehaviour
         if (currentHealth > 0)
         {
             animator.SetTrigger("hurt");
+            StartCoroutine(DisableColliderTemporarily(collider: playerCollider));
         }
         else
         {
@@ -50,5 +55,12 @@ public class Health : MonoBehaviour
     public void AddHealth(float amount)
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, startingHealth);
+    }
+
+    private IEnumerator DisableColliderTemporarily(Collider2D collider)
+    {
+        collider.enabled = false;
+        yield return new WaitForSeconds(1f);
+        collider.enabled = true;
     }
 }

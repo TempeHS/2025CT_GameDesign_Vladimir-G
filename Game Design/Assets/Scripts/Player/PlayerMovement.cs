@@ -4,9 +4,9 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 6f;
-    private float JumpingPower = 12f;
-    private float dashingPower = 24f;
+    private float speed = 8f;
+    private float JumpingPower = 14f;
+    private float dashingPower = 18f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
     private float wallSlidingSpeed = 2f;
@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask wallLayer;
     [SerializeField] private Animator _animator;
 
-    Animator animator;
+    private Animator animator;
 
     private bool wasGrounded;
 
@@ -57,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isJumping", false);
             animator.SetBool("isDoubleJumping", false);
             animator.SetBool("isWallJumping", false);
-            Debug.Log("Player landed");
         }
 
         animator.SetBool("isWallJumping", isWallJumping);
@@ -104,7 +103,6 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, JumpingPower);
                 doubleJump = false; // Consume double jump
                 animator.SetBool("isDoubleJumping", true);
-                Debug.Log("Player double jumped");
             }
 
             if ((horizontal < 0f && isFacingRight) || (horizontal > 0f && !isFacingRight))
