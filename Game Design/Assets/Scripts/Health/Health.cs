@@ -1,36 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
-public class Health : MonoBehaviour
+public class Health1 : MonoBehaviour
 {
-    [SerializeField] private float startingHealth;
-    public float currentHealth { get; private set; }
-
-    private void Awake()
+    // Start is called before the first frame update
+    void Start()
     {
-        currentHealth = startingHealth;
+        
     }
 
-    public void TakeDamage(float _damage)
+    // Update is called once per frame
+    void Update()
     {
-        currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
-
-        if (currentHealth > 0)
-        {
-            //playerHurt
-        }
-        else
-        {
-            //player dead
-        }
+        
     }
-
-    private void Update()
-    {
-        if (input.GetKeyDown(KeyCode.R))
-        {
-            TakeDamage(1);
-        }
-    }
-
 }
