@@ -1,28 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps; //
+using UnityEngine.Tilemaps;
 
 public class HealthCollect : MonoBehaviour
 {
     [SerializeField] private Tilemap heartsTilemap;
-    private float healthValue = 1f;
+    [SerializeField] private TileBase heartTile;
+    [SerializeField] private float healthValue = 1f;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.CompareTag("Player"))
-        {
-            collision.GetComponent<Health>().AddHealth(healthValue); // Heal the player
-        }
+        Vector3 playerWorldPos = transform.position;
+        Vector3Int tilePos = heartsTilemap.WorldToCell(playerWorldPos);
+        TileBase tile = heartsTilemap.GetTile(tilePos);
 
-        if (heartsTilemap != null)
+        if (tile == heartTile)
         {
-            Vector3Int cellPosition = heartsTilemap.WorldToCell(collision.transform.position);
-            TileBase tile = heartsTilemap.GetTile(cellPosition);
-            if (tile != null)
-            {
-                heartsTilemap.SetTile(cellPosition, null); // Remove the heart tile
-            }
+            GetComponent<Health>().AddHealth(healthValue);
+            heartsTilemap.SetTile(tilePos, null); // Remove the tile
         }
     }
 }
