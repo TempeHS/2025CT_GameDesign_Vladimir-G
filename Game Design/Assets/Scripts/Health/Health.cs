@@ -30,7 +30,7 @@ public class Health : MonoBehaviour
         if (currentHealth > 0)
         {
             animator.SetTrigger("hurt");
-            StartCoroutine(DisableColliderTemporarily(collider: playerCollider));
+            //StartCoroutine(DisableColliderTemporarily(collider: playerCollider));
         }
         else
         {
@@ -56,11 +56,15 @@ public class Health : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, startingHealth);
     }
+}
 
+
+    /*
     private IEnumerator DisableColliderTemporarily(Collider2D collider)
     {
         collider.enabled = false;
         yield return new WaitForSeconds(1f);
         collider.enabled = true;
     }
-}
+}\
+*/
