@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using System.Collections;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -40,9 +39,17 @@ public class Health : MonoBehaviour
                 animator.SetTrigger("die");
                 GetComponent<PlayerMovement>().enabled = false;
                 dead = true;
-                SceneManager.LoadSceneAsync(2);
+                StartCoroutine(HandleDeath());
             }
         }
+    }
+
+    private IEnumerator HandleDeath()
+    {
+        if (gameOverText != null)
+            yield return new WaitForSeconds(1f); // Wait for the death animation to finish
+        gameOverText.gameObject.SetActive(true);
+        Destroy(gameObject); // Destroy the player object
     }
 
     public void AddHealth(float amount)
