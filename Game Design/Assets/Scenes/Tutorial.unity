@@ -28966,7 +28966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 5
-  gameOverText: {fileID: 376676479}
+  deathSceneIndex: 8
   playerCollider: {fileID: 743508599}
 --- !u!114 &743508609
 MonoBehaviour:

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
-    [SerializeField] private int deathSceneIndex = 2;
+    [SerializeField] private int deathSceneIndex = 8;
 
     public float currentHealth { get; private set; }
 
@@ -39,11 +39,11 @@ public class Health : MonoBehaviour
             {
                 PlayerPrefs.SetInt("LastLevelIndex", SceneManager.GetActiveScene().buildIndex);
                 SceneManager.LoadSceneAsync(deathSceneIndex);
-
+                
                 animator.SetTrigger("die");
                 GetComponent<PlayerMovement>().enabled = false;
                 dead = true;
-                SceneManager.LoadSceneAsync(2);
+                SceneManager.LoadSceneAsync(8);
             }
         }
     }
