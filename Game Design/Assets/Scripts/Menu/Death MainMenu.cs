@@ -7,12 +7,12 @@ public class DeathMainMenu : MonoBehaviour
 {
     public void Retry()
     {
-        int lastIndex = PlayerPrefs.GetInt("LastLevelIndex", 0);
+        int lastIndex = PlayerPrefs.GetInt("LastLevelIndex", 7);
         SceneManager.LoadSceneAsync(lastIndex);
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadSceneAsync(6);
+        SceneManager.LoadSceneAsync(7);
     }
 }
