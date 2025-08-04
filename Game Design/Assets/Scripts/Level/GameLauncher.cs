@@ -6,6 +6,7 @@ public class NewBehaviourScript : MonoBehaviour
 {
     void Awake()
     {
+        Debug.Log("GameInitializer Awake() called!");
         resetProgress();
     }
 
