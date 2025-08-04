@@ -36,18 +36,25 @@ public class PauseMenuController : MonoBehaviour
 
     public void Home()
     {
+        isPaused = false;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
         SceneManager.LoadSceneAsync(7);
     }
 
     public void Resume()
     {
-        Time.timeScale = 1;
         pauseMenu.SetActive(false);
+        isPaused = false;
+        Time.timeScale = 1f;
     }
 
     public void Restart()
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        isPaused = false;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
     }
 
 
