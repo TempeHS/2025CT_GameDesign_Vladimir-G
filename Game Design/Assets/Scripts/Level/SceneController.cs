@@ -18,6 +18,18 @@ public class SceneController : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseMenu pauseMenu = FindObjectOfType<PauseMenu>();
+            if (pauseMenu)
+            {
+                pauseMenu.TogglePauseMenu();
+            }
+        }
+    }
+
     public void NextLevel()
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
