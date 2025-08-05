@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D other)
+    public float bounceForce = 5f;
+
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy"))
         {
-            Health enemyHealth = other.gameObject.GetComponent<Health>();
-            if (enemyHealth != null)
-            {
-                enemyHealth.TakeDamage(1f);
-            }
+            other.GetComponent<enemyHealth>().TakeDamage(1f);
+            GetComponentInParent<Rigidbody2D>().velocity = Vector2.zero;
+            GetComponentInParent<Rigidbody2D>().AddForce(Vector2.up * bounceForce, ForceMode2D.Impulse);
         }
     }
 }
