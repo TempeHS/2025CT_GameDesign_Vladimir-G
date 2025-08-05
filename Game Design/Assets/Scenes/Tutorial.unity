@@ -30038,10 +30038,10 @@ MonoBehaviour:
   - {fileID: 249518509}
   - {fileID: 2115417044}
   speed: 2
-  chaseSpeed: 4
+  chaseSpeed: 6
   playerTransform: {fileID: 743508601}
   isChasing: 0
-  chaseDistance: 1
+  chaseDistance: 3
 --- !u!61 &1375710080
 BoxCollider2D:
   m_ObjectHideFlags: 0
