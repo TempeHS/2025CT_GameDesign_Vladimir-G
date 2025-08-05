@@ -32451,7 +32451,11 @@ MonoBehaviour:
   partrolPoints:
   - {fileID: 1008529628}
   - {fileID: 214013706}
-  speed: 6
+  speed: 4
+  chaseSpeed: 8
+  playerTransform: {fileID: 743508601}
+  isChasing: 0
+  chaseDistance: 5
 --- !u!61 &2129923666
 BoxCollider2D:
   m_ObjectHideFlags: 0
