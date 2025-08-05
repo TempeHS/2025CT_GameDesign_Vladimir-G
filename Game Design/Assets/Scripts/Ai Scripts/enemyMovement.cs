@@ -23,6 +23,7 @@ public class enemyMovement : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, partrolPoints[0].position, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, partrolPoints[0].position) < 0.5f)
             {
+                transform.localScale = new Vector3(7, 7, 7);
                 patrolDestination = 1;
             }
         }
@@ -32,10 +33,9 @@ public class enemyMovement : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, partrolPoints[1].position, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, partrolPoints[1].position) < 0.5f)
             {
+                transform.localScale = new Vector3(-7, 7, 7);
                 patrolDestination = 0;
             }
         }
     }
-
-
 }
