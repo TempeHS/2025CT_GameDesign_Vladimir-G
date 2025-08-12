@@ -9,6 +9,8 @@ TagManager:
   - KillZone
   - Enemy
   - Weak
+  - Boss
+  - bossWeakPoint
   layers:
   - Default
   - TransparentFX

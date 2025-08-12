@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyDamage : MonoBehaviour
+public class EnemyDamage : MonoBehaviour
 {
     [SerializeField] private float damageAmount = 1f;
 

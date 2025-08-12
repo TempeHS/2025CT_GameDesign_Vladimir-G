@@ -8,19 +8,32 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Weak"))
-            return;
+        if (other.CompareTag("Weak"))
+        {
+            EnemyHealth enemy = other.GetComponentInParent<EnemyHealth>();
+            if (enemy == null) return;
 
-        enemyHealth enemy = other.GetComponentInParent<enemyHealth>();
-        if (enemy == null) return;
+            enemy.TakeDamage(1f);
 
-        enemy.TakeDamage(1f);
+            Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
+            if (rb == null) return;
 
-        Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
-        if (rb == null) return;
+            rb.velocity = Vector2.zero;
+            rb.AddForce(Vector2.up * bounceForce, ForceMode2D.Impulse);
+        }
 
-        rb.velocity = Vector2.zero;
-        rb.AddForce(Vector2.up * bounceForce, ForceMode2D.Impulse);
+        if (other.CompareTag("bossWeakPoint"))
+        {
+            BossHp bossHp = other.GetComponentInParent<BossHp>();
+            if (bossHp == null) return;
+
+            bossHp.TakeBossDamage(1f);
+
+            Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
+            if (rb == null) return;
+
+            rb.velocity = Vector2.zero;
+            rb.AddForce(Vector2.up * bounceForce, ForceMode2D.Impulse);
+        }
     }
-
 }

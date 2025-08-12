@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private float enemyMaxHealth = 3f;
     [SerializeField] private float stunDuration = 1.5f;
     private float enemyCurrentHealth;
     private Animator animator;
-    private enemyMovement movement;
+    private EnemyMovement movement;
 
 
 
@@ -16,7 +16,7 @@ public class enemyHealth : MonoBehaviour
     {
         enemyCurrentHealth = enemyMaxHealth;
         animator = GetComponent<Animator>();
-        movement = GetComponent<enemyMovement>();
+        movement = GetComponent<EnemyMovement>();
     }
 
     public void TakeDamage(float damage)
@@ -31,7 +31,7 @@ public class enemyHealth : MonoBehaviour
         {
             if (enemyCurrentHealth <= 0)
             {
-                GetComponent<enemyMovement>().enabled = false;
+                GetComponent<EnemyMovement>().enabled = false;
                 Die();
             }
         }
