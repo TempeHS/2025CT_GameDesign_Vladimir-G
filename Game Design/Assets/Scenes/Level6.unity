@@ -112652,7 +112652,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 4
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -112714,7 +112714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd893117511b4414f91d9419a26ea9ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossMaxHealth: 3
+  bossMaxHealth: 50
 --- !u!114 &2086494610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112739,6 +112739,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52d7bbde4130ce4f8599674aaa62f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 4
+  chaseSpeed: 8
+  chaseDuration: 4
+  playerTransform: {fileID: 743508601}
 --- !u!1 &2113942361
 GameObject:
   m_ObjectHideFlags: 0
