@@ -9,6 +9,7 @@ public class BossController : MonoBehaviour
     public float chaseDuration = 4f;
     private Animator animator;
     public Transform playerTransform;
+    private bool startLoop;
 
 
     void Awake()
@@ -19,9 +20,9 @@ public class BossController : MonoBehaviour
 
     public void BossChase()
     {
-        
+
     }
-    
+
 
     public void BossFlee()
     {
@@ -46,7 +47,20 @@ public class BossController : MonoBehaviour
 
     public void Update()
     {
+        if (startLoop == true)
+        {
+            StartCoroutine(PickActionLoop());
+        }
+    }
 
+
+    private IEnumerator PickActionLoop()
+    {
+        while (true)
+        {
+            PickAction();
+            yield return new WaitForSeconds(6f);
+        }
     }
 }
 
