@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    private static bool hasInitialized = false;
+
     void Awake()
     {
-        Debug.Log("GameInitializer Awake() called!");
+        if (hasInitialized)
+            return;
+
+        hasInitialized = true;
+        DontDestroyOnLoad(gameObject);
         resetProgress();
     }
 

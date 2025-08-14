@@ -39,7 +39,7 @@ public class Health : MonoBehaviour
             {
                 PlayerPrefs.SetInt("LastLevelIndex", SceneManager.GetActiveScene().buildIndex);
                 SceneManager.LoadSceneAsync(deathSceneIndex);
-                
+
                 animator.SetTrigger("die");
                 GetComponent<PlayerMovement>().enabled = false;
                 dead = true;
@@ -52,15 +52,14 @@ public class Health : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, startingHealth);
     }
+
+    //private IEnumerator DisableColliderTemporarily(Collider2D collider)
+    //{
+    //    isInvulnerable = true;
+    //    yield return new WaitForSeconds(invincibilityDuration);
+    //    isInvulnerable = false;
+    //}
 }
 
 
-    /*
-    private IEnumerator DisableColliderTemporarily(Collider2D collider)
-    {
-        collider.enabled = false;
-        yield return new WaitForSeconds(1f);
-        collider.enabled = true;
-    }
-}\
-*/
+

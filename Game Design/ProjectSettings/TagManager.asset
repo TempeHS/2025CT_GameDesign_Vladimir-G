@@ -7,6 +7,10 @@ TagManager:
   - OneWayPlatform
   - PlayerFallOff
   - KillZone
+  - Enemy
+  - Weak
+  - Boss
+  - bossWeakPoint
   layers:
   - Default
   - TransparentFX
