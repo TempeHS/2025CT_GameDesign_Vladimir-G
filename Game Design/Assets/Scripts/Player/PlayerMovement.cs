@@ -76,32 +76,17 @@ public class PlayerMovement : MonoBehaviour
             doubleJump = false;
         }
 
-        // if (Input.GetButtonDown("Jump"))
-        // {
-        //     if (IsGrounded() || doubleJump)
-        //     {
-        //         rb.velocity = new Vector2(rb.velocity.x, JumpingPower);
-
-        //         doubleJump = !doubleJump;
-
-        //         if ((horizontal < 0f && isFacingRight) || (horizontal > 0f && !isFacingRight))
-        //         {
-        //             Flip();
-        //         }
-        //     }
-        // }
-
         if (Input.GetButtonDown("Jump"))
         {
             if (IsGrounded())
             {
                 rb.velocity = new Vector2(rb.velocity.x, JumpingPower);
-                doubleJump = true; // Enable double jump after first jump
+                doubleJump = true;
             }
             else if (doubleJump)
             {
                 rb.velocity = new Vector2(rb.velocity.x, JumpingPower);
-                doubleJump = false; // Consume double jump
+                doubleJump = false;
                 animator.SetBool("isDoubleJumping", true);
             }
 
