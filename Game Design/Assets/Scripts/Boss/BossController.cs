@@ -9,7 +9,7 @@ public class BossController : MonoBehaviour
     public float chaseDuration = 4f;
     private Animator animator;
     public Transform playerTransform;
-    private bool startLoop;
+    private bool startLoop = true;
 
 
     void Awake()
@@ -20,35 +20,39 @@ public class BossController : MonoBehaviour
 
     public void BossChase()
     {
-
-    }
+        if (playerTransform.position.x > transform.position.x)
+            {
+                transform.position += Vector3.right * chaseSpeed * Time.deltaTime;
+                transform.localScale = new Vector3(7, 7, 7);
+            }
+            else
+            {
+                transform.position += Vector3.left * chaseSpeed * Time.deltaTime;
+                transform.localScale = new Vector3(-7, 7, 7);
+            }
+    }  
 
 
     public void BossFlee()
     {
-
-    }
-
-
-    public void PickAction()
-    {
-        int randomNumber = Random.Range(0, 1);
-
-        if (randomNumber == 0)
-        {
-            BossChase();
-        }
-        else
-        {
-            BossFlee();
-        }
+        if (playerTransform.position.x > transform.position.x)
+            {
+                transform.position -= Vector3.right * chaseSpeed * Time.deltaTime;
+                transform.localScale = new Vector3(7, 7, 7);
+            }
+            else
+            {
+                transform.position -= Vector3.left * chaseSpeed * Time.deltaTime;
+                transform.localScale = new Vector3(-7, 7, 7);
+            }
     }
 
 
     public void Update()
     {
-        if (startLoop == true)
+        if (startLoop)
         {
+            startLoop = false;         
             StartCoroutine(PickActionLoop());
         }
     }
@@ -56,10 +60,16 @@ public class BossController : MonoBehaviour
 
     private IEnumerator PickActionLoop()
     {
-        while (true)
+        int randomNumber = Random.Range(0, 2);
+        float elasped = 0f;
+
+        while (elasped < 4f)
         {
-            PickAction();
-            yield return new WaitForSeconds(6f);
+            if (randomNumber == 0) BossChase();
+            else BossFlee();
+
+            elasped += Time.deltaTime;
+            yield return null;
         }
     }
 }
