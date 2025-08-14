@@ -23,12 +23,12 @@ public class BossController : MonoBehaviour
         if (playerTransform.position.x > transform.position.x)
             {
                 transform.position += Vector3.right * chaseSpeed * Time.deltaTime;
-                transform.localScale = new Vector3(7, 7, 7);
+                transform.localScale = new Vector3(12, 12, 12);
             }
             else
             {
                 transform.position += Vector3.left * chaseSpeed * Time.deltaTime;
-                transform.localScale = new Vector3(-7, 7, 7);
+                transform.localScale = new Vector3(-12, 12, 12);
             }
     }  
 
@@ -38,12 +38,12 @@ public class BossController : MonoBehaviour
         if (playerTransform.position.x > transform.position.x)
             {
                 transform.position -= Vector3.right * chaseSpeed * Time.deltaTime;
-                transform.localScale = new Vector3(7, 7, 7);
+                transform.localScale = new Vector3(12, 12, 12);
             }
             else
             {
                 transform.position -= Vector3.left * chaseSpeed * Time.deltaTime;
-                transform.localScale = new Vector3(-7, 7, 7);
+                transform.localScale = new Vector3(-12, 12, 12);
             }
     }
 
