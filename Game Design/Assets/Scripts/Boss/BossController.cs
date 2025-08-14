@@ -21,30 +21,30 @@ public class BossController : MonoBehaviour
     public void BossChase()
     {
         if (playerTransform.position.x > transform.position.x)
-            {
-                transform.position += Vector3.right * chaseSpeed * Time.deltaTime;
-                transform.localScale = new Vector3(12, 12, 12);
-            }
-            else
-            {
-                transform.position += Vector3.left * chaseSpeed * Time.deltaTime;
-                transform.localScale = new Vector3(-12, 12, 12);
-            }
-    }  
+        {
+            transform.position += Vector3.right * chaseSpeed * Time.deltaTime;
+            transform.localScale = new Vector3(12, 12, 12);
+        }
+        else
+        {
+            transform.position += Vector3.left * chaseSpeed * Time.deltaTime;
+            transform.localScale = new Vector3(-12, 12, 12);
+        }
+    }
 
 
     public void BossFlee()
     {
         if (playerTransform.position.x > transform.position.x)
-            {
-                transform.position -= Vector3.right * chaseSpeed * Time.deltaTime;
-                transform.localScale = new Vector3(12, 12, 12);
-            }
-            else
-            {
-                transform.position -= Vector3.left * chaseSpeed * Time.deltaTime;
-                transform.localScale = new Vector3(-12, 12, 12);
-            }
+        {
+            transform.position -= Vector3.right * chaseSpeed * Time.deltaTime;
+            transform.localScale = new Vector3(12, 12, 12);
+        }
+        else
+        {
+            transform.position -= Vector3.left * chaseSpeed * Time.deltaTime;
+            transform.localScale = new Vector3(-12, 12, 12);
+        }
     }
 
 
@@ -52,7 +52,7 @@ public class BossController : MonoBehaviour
     {
         if (startLoop)
         {
-            startLoop = false;         
+            startLoop = false;
             StartCoroutine(PickActionLoop());
         }
     }
@@ -60,17 +60,39 @@ public class BossController : MonoBehaviour
 
     private IEnumerator PickActionLoop()
     {
+        Debug.Log("Starting action loop...");
+
         int randomNumber = Random.Range(0, 2);
-        float elasped = 0f;
 
-        while (elasped < 4f)
+        if (randomNumber == 0)
         {
-            if (randomNumber == 0) BossChase();
-            else BossFlee();
-
-            elasped += Time.deltaTime;
-            yield return null;
+            BossChase();
         }
+        else
+        {
+            BossFlee();
+        }
+
+        yield return new WaitForSeconds(5f);
+        startLoop = true;
+
     }
 }
 
+
+//float elasped = 0f;
+
+/*while (elasped < 4f)
+{
+    if (randomNumber == 0)
+    {
+        BossChase();
+    }
+    else
+    {
+        BossFlee();
+    }
+
+    elasped += Time.deltaTime;
+    yield return null;
+}*/
