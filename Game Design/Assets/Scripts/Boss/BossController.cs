@@ -15,8 +15,8 @@ public class BossController : MonoBehaviour
 
     void Awake()
     {
-        animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
+        rb = GetComponentInChildren<Rigidbody2D>();
     }
 
 
@@ -29,14 +29,14 @@ public class BossController : MonoBehaviour
             Vector3 targetVelocity = new Vector2(playerTransform.position.x - transform.position.x, 0);
             targetVelocity.Normalize();
             rb.AddForce(targetVelocity * chaseSpeed, ForceMode2D.Impulse);
-            transform.localScale = new Vector3(-12, 12, 12);
+            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
         }
         else
         {
             Vector3 targetVelocity = new Vector2(playerTransform.position.x - transform.position.x, 0);
             targetVelocity.Normalize();
             rb.AddForce(targetVelocity * chaseSpeed, ForceMode2D.Impulse);
-            transform.localScale = new Vector3(12, 12, 12);
+            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
         }
     }
 
