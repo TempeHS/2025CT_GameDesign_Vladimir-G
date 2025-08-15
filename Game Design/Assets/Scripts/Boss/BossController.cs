@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public float speed = 4;
-    public float chaseSpeed = 8;
-    public float chaseDuration = 4f;
+    public float speed = 10;
+    public float chaseSpeed = 16;
     private Animator animator;
     public Transform playerTransform;
     private bool startLoop = true;
@@ -83,7 +82,7 @@ public class BossController : MonoBehaviour
             BossFlee();
         }
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(6f);
         startLoop = true;
     }
 
