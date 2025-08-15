@@ -112432,8 +112432,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.3772938, y: -0.2267882}
-  m_Size: {x: 0.29080147, y: 0.4763557}
+  m_Offset: {x: 0.3642916, y: -0.2056596}
+  m_Size: {x: 0.26479706, y: 0.49910992}
   m_Direction: 0
 --- !u!212 &1836246257
 SpriteRenderer:
@@ -112486,7 +112486,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!50 &1836246258
 Rigidbody2D:
   serializedVersion: 4
@@ -112871,7 +112871,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.35717136, y: 0.07824518}
+  m_Offset: {x: 0.35717142, y: 0.07085271}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -112882,7 +112882,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16476595, y: 0.01773277}
+  m_Size: {x: 0.14153221, y: 0.019844905}
   m_EdgeRadius: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
