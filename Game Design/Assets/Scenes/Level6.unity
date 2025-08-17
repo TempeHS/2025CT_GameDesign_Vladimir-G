@@ -107957,7 +107957,7 @@ Transform:
   m_GameObject: {fileID: 743508597}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 1, z: 0}
+  m_LocalPosition: {x: 50, y: 1, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -108259,7 +108259,7 @@ Transform:
   m_GameObject: {fileID: 836582733}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10, y: 1, z: -10}
+  m_LocalPosition: {x: 50, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -108379,8 +108379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  chaseSpeed: 8
-  chaseDuration: 4
+  chaseSpeed: 12
   playerTransform: {fileID: 743508601}
   rb: {fileID: 1836246258}
 --- !u!4 &896887309
@@ -108392,7 +108391,7 @@ Transform:
   m_GameObject: {fileID: 896887307}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.64, y: -5.3, z: 0}
+  m_LocalPosition: {x: 50, y: -9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -109279,7 +109278,7 @@ Transform:
   m_GameObject: {fileID: 1193718738}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10, y: 2, z: -10}
+  m_LocalPosition: {x: 50, y: 2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -112377,6 +112376,7 @@ GameObject:
   - component: {fileID: 1836246258}
   - component: {fileID: 1836246257}
   - component: {fileID: 1836246256}
+  - component: {fileID: 1836246260}
   m_Layer: 0
   m_Name: BossBody
   m_TagString: Boss
@@ -112393,7 +112393,7 @@ Transform:
   m_GameObject: {fileID: 1836246254}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.01, y: 0.85, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 12, y: 12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -112432,8 +112432,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.3642916, y: -0.2056596}
-  m_Size: {x: 0.26479706, y: 0.49910992}
+  m_Offset: {x: 0, y: 0.18258679}
+  m_Size: {x: 0.3132016, y: 0.51864254}
   m_Direction: 0
 --- !u!212 &1836246257
 SpriteRenderer:
@@ -112499,10 +112499,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -112513,7 +112513,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 6
+  m_Constraints: 4
 --- !u!95 &1836246259
 Animator:
   serializedVersion: 5
@@ -112535,6 +112535,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1836246260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836246254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd893117511b4414f91d9419a26ea9ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossMaxHealth: 50
 --- !u!1001 &2013791284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112871,7 +112884,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.35717142, y: 0.07085271}
+  m_Offset: {x: 0, y: 0.46}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -112882,7 +112895,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14153221, y: 0.019844905}
+  m_Size: {x: 0.15, y: 0.02}
   m_EdgeRadius: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
