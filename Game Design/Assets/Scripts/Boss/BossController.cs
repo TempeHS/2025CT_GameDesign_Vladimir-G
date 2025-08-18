@@ -16,7 +16,7 @@ public class BossController : MonoBehaviour
     private bool isFacingRight;
     [SerializeField] private LayerMask wallLayer;
     private CapsuleCollider2D capsuleCollider;
-    private bool flippedDuringChase;
+    //private bool flippedDuringChase; !flippedDuringChase
 
 
 
@@ -32,11 +32,12 @@ public class BossController : MonoBehaviour
     {
         Debug.Log("Boss is chasing the player!");
 
-        if (!flippedDuringChase && isWall())
+        if (isWall())
         {
             Flip();
             Debug.Log("flipped");
-            flippedDuringChase = true;
+            //flippedDuringChase = true;
+       
             return;
         }
 
@@ -45,7 +46,6 @@ public class BossController : MonoBehaviour
                 Vector3 targetVelocity = new Vector2(playerTransform.position.x - transform.position.x, 0);
                 targetVelocity.Normalize();
                 rb.AddForce(targetVelocity * chaseSpeed, ForceMode2D.Impulse);
-                transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
 
             }
             else
@@ -53,7 +53,6 @@ public class BossController : MonoBehaviour
                 Vector3 targetVelocity = new Vector2(playerTransform.position.x - transform.position.x, 0);
                 targetVelocity.Normalize();
                 rb.AddForce(targetVelocity * chaseSpeed, ForceMode2D.Impulse);
-                transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
             }
     }
 
