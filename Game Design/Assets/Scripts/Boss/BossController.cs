@@ -1,21 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class BossController : MonoBehaviour
 {
     public float speed = 10;
-    public float chaseSpeed = 16;
+    public float chaseSpeed = 12;
     private Animator animator;
     public Transform playerTransform;
     private bool startLoop = true;
     [SerializeField] private Rigidbody2D rb;
+    public float chaseDuration = 5;
+    private bool isFacingRight;
+    [SerializeField] private LayerMask wallLayer;
+    private CapsuleCollider2D capsuleCollider;
+    private bool flippedDuringChase;
+
 
 
     void Awake()
     {
         animator = GetComponentInChildren<Animator>();
         rb = GetComponentInChildren<Rigidbody2D>();
+        capsuleCollider = GetComponentInChildren<CapsuleCollider2D>();
     }
 
 
@@ -23,20 +32,73 @@ public class BossController : MonoBehaviour
     {
         Debug.Log("Boss is chasing the player!");
 
+        if (!flippedDuringChase && isWall())
+        {
+            Flip();
+            Debug.Log("flipped");
+            flippedDuringChase = true;
+            return;
+        }
+
         if (playerTransform.position.x > transform.position.x)
+            {
+                Vector3 targetVelocity = new Vector2(playerTransform.position.x - transform.position.x, 0);
+                targetVelocity.Normalize();
+                rb.AddForce(targetVelocity * chaseSpeed, ForceMode2D.Impulse);
+                transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+
+            }
+            else
+            {
+                Vector3 targetVelocity = new Vector2(playerTransform.position.x - transform.position.x, 0);
+                targetVelocity.Normalize();
+                rb.AddForce(targetVelocity * chaseSpeed, ForceMode2D.Impulse);
+                transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+            }
+    }
+
+
+    private void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1f;
+        transform.localScale = localScale;
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
-            Vector3 targetVelocity = new Vector2(playerTransform.position.x - transform.position.x, 0);
-            targetVelocity.Normalize();
-            rb.AddForce(targetVelocity * chaseSpeed, ForceMode2D.Impulse);
-            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+            Flip();
+            Debug.Log("Boss colided with wall and flips");
         }
-        else
+    }
+
+
+    private bool isWall()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(capsuleCollider.bounds.center, capsuleCollider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.1f, wallLayer);
+        return raycastHit.collider != null;
+    }
+
+    
+
+
+    public IEnumerator BossChasePlayer()
+    {
+        Debug.Log("BossChasePlayerTriggered");
+
+        float time = 0f;
+
+        while (time < chaseDuration)
         {
-            Vector3 targetVelocity = new Vector2(playerTransform.position.x - transform.position.x, 0);
-            targetVelocity.Normalize();
-            rb.AddForce(targetVelocity * chaseSpeed, ForceMode2D.Impulse);
-            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+            BossChase();
+            time += Time.deltaTime;
+            yield return null;
         }
+
     }
 
 
@@ -59,6 +121,7 @@ public class BossController : MonoBehaviour
 
     public void Update()
     {
+        
         if (startLoop)
         {
             startLoop = false;
@@ -75,7 +138,8 @@ public class BossController : MonoBehaviour
 
         if (randomNumber == 0)
         {
-            BossChase();
+            StartCoroutine(BossChasePlayer());
+            Debug.Log("Boss is chasing the player");
         }
         else
         {
@@ -85,17 +149,4 @@ public class BossController : MonoBehaviour
         yield return new WaitForSeconds(6f);
         startLoop = true;
     }
-
-    /*
-        private void Flip()
-        {
-            if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
-            {
-                isFacingRight = !isFacingRight;
-                Vector3 localScale = transform.localScale;
-                localScale.x *= -1f;
-                transform.localScale = localScale;
-            }
-        }
-    */
 }
