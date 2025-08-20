@@ -16,7 +16,7 @@ public class BossController : MonoBehaviour
     private bool isFacingRight;
     [SerializeField] private LayerMask wallLayer;
     private CapsuleCollider2D capsuleCollider;
-    //private bool flippedDuringChase; !flippedDuringChase
+    private bool flippedDuringChase; 
 
 
 
@@ -32,13 +32,12 @@ public class BossController : MonoBehaviour
     {
         Debug.Log("Boss is chasing the player!");
 
-        if (isWall())
+        if (IsWall() & !flippedDuringChase)
         {
+            rb.velocity = Vector2.zero;
             Flip();
             Debug.Log("flipped");
-            //flippedDuringChase = true;
-       
-            return;
+            flippedDuringChase = true;
         }
 
         if (playerTransform.position.x > transform.position.x)
@@ -66,19 +65,12 @@ public class BossController : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private bool IsWall()
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
-        {
-            Flip();
-            Debug.Log("Boss colided with wall and flips");
-        }
-    }
-
-
-    private bool isWall()
-    {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(capsuleCollider.bounds.center, capsuleCollider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.1f, wallLayer);
+        //RaycastHit2D raycastHit = Physics2D.BoxCast(capsuleCollider.bounds.center, capsuleCollider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.1f, wallLayer);
+        //return raycastHit.collider != null;
+        Vector2 direction = isFacingRight ? Vector2.right : Vector2.left;
+        RaycastHit2D raycastHit = Physics2D.BoxCast(capsuleCollider.bounds.center, capsuleCollider.bounds.size, 0f, direction, 0.1f, wallLayer);
         return raycastHit.collider != null;
     }
 
