@@ -16,7 +16,7 @@ public class BossController : MonoBehaviour
     private bool isFacingRight;
     [SerializeField] private LayerMask wallLayer;
     private CapsuleCollider2D capsuleCollider;
-    private bool flippedDuringChase; 
+    private bool flippedDuringChase;
 
 
 
@@ -41,18 +41,18 @@ public class BossController : MonoBehaviour
         }
 
         if (playerTransform.position.x > transform.position.x)
-            {
-                Vector3 targetVelocity = new Vector2(playerTransform.position.x - transform.position.x, 0);
-                targetVelocity.Normalize();
-                rb.AddForce(targetVelocity * chaseSpeed, ForceMode2D.Impulse);
+        {
+            Vector3 targetVelocity = new Vector2(playerTransform.position.x - transform.position.x, 0);
+            targetVelocity.Normalize();
+            rb.AddForce(targetVelocity * chaseSpeed, ForceMode2D.Impulse);
 
-            }
-            else
-            {
-                Vector3 targetVelocity = new Vector2(playerTransform.position.x - transform.position.x, 0);
-                targetVelocity.Normalize();
-                rb.AddForce(targetVelocity * chaseSpeed, ForceMode2D.Impulse);
-            }
+        }
+        else
+        {
+            Vector3 targetVelocity = new Vector2(playerTransform.position.x - transform.position.x, 0);
+            targetVelocity.Normalize();
+            rb.AddForce(targetVelocity * chaseSpeed, ForceMode2D.Impulse);
+        }
     }
 
 
@@ -74,7 +74,7 @@ public class BossController : MonoBehaviour
         return raycastHit.collider != null;
     }
 
-    
+
 
 
     public IEnumerator BossChasePlayer()
@@ -87,7 +87,7 @@ public class BossController : MonoBehaviour
         {
             BossChase();
             time += Time.deltaTime;
-            yield return null;
+            yield return new WaitForSeconds(Time.deltaTime);
         }
 
     }
@@ -112,7 +112,7 @@ public class BossController : MonoBehaviour
 
     public void Update()
     {
-        
+
         if (startLoop)
         {
             startLoop = false;
