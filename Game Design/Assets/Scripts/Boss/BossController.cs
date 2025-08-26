@@ -1,3 +1,5 @@
+/*
+
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -12,13 +14,11 @@ public class BossController : MonoBehaviour
     public Transform playerTransform;
     private bool startLoop = true;
     [SerializeField] private Rigidbody2D rb;
-    public float chaseDuration = 5;
     private bool isFacingRight;
     [SerializeField] private LayerMask wallLayer;
     private CapsuleCollider2D capsuleCollider;
     private bool flippedDuringChase;
-
-
+    public gameObject player;
 
     void Awake()
     {
@@ -32,7 +32,7 @@ public class BossController : MonoBehaviour
     {
         Debug.Log("Boss is chasing the player!");
 
-        if (IsWall() & !flippedDuringChase)
+        if (IsWall() && !flippedDuringChase)
         {
             rb.velocity = Vector2.zero;
             Flip();
@@ -40,18 +40,21 @@ public class BossController : MonoBehaviour
             flippedDuringChase = true;
         }
 
+
         if (playerTransform.position.x > transform.position.x)
         {
-            Vector3 targetVelocity = new Vector2(playerTransform.position.x - transform.position.x, 0);
-            targetVelocity.Normalize();
-            rb.AddForce(targetVelocity * chaseSpeed, ForceMode2D.Impulse);
+            rb.velocity = new Vector2(chaseSpeed, rb.velocity.y);
+            if (!isFacingRight) Flip();
+        }
 
+        else if (playerTransform.position.x < transform.position.x)
+        {
+            rb.velocity = new Vector2(-chaseSpeed, rb.velocity.y);
+            if (isFacingRight) Flip();
         }
         else
         {
-            Vector3 targetVelocity = new Vector2(playerTransform.position.x - transform.position.x, 0);
-            targetVelocity.Normalize();
-            rb.AddForce(targetVelocity * chaseSpeed, ForceMode2D.Impulse);
+            rb.velocity = Vector2.zero;
         }
     }
 
@@ -89,6 +92,8 @@ public class BossController : MonoBehaviour
             time += Time.deltaTime;
             yield return new WaitForSeconds(Time.deltaTime);
         }
+
+        flippedDuringChase = false;
 
     }
 
@@ -141,3 +146,5 @@ public class BossController : MonoBehaviour
         startLoop = true;
     }
 }
+
+*/
