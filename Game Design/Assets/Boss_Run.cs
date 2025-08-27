@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Boss_Run : StateMachineBehaviour
 {
-
-    public float chaseSpeed = 10000f;
-    public float attackRange = 5f;
+    public float maxChaseSpeed = 25f;
+    public float addForce = 10f;
+    public float attackRange = 50f;
 
     Transform player;
     Rigidbody2D rb;
@@ -17,16 +17,15 @@ public class Boss_Run : StateMachineBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = animator.GetComponent<Rigidbody2D>();
         lookAtPlayer = animator.GetComponent<BossLookAtPlayer>();
-        rb.gravityScale = 0;
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         lookAtPlayer.LookAtPlayer();
 
-        Vector2 target = new Vector2(player.position.x, rb.position.y);
-        Vector2 newPos = Vector2.MoveTowards(rb.position, target, chaseSpeed * Time.deltaTime);
-        rb.MovePosition(newPos);
+        float direction = Mathf.Sign(player.position.x - rb.position.x);
+
+        rb.velocity = new Vector2(direction * maxChaseSpeed * addForce, rb.velocity.y);
 
         if (Vector2.Distance(player.position, rb.position) < attackRange)
         {

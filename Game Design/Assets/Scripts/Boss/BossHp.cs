@@ -7,6 +7,7 @@ public class BossHp : MonoBehaviour
     [SerializeField] private float bossMaxHealth = 50f;
     private float bossCurrentHealth;
     private Animator animator;
+    private float hitDuration = 1f;
 
     private void Awake()
     {
@@ -20,7 +21,7 @@ public class BossHp : MonoBehaviour
 
         if (bossCurrentHealth > 0)
         {
-            //animator.SetTrigger("Hit");
+            StartCoroutine(BossLostHp());
         }
         else
         {
@@ -32,5 +33,12 @@ public class BossHp : MonoBehaviour
     {
         animator.SetTrigger("Die");
         Destroy(gameObject, 1f);
+    }
+
+    private IEnumerator BossLostHp()
+    {
+        animator.SetBool("isHurt", true);
+        yield return new WaitForSeconds(hitDuration);
+        animator.SetBool("isHurt", false);
     }
 }
