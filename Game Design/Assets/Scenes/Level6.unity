@@ -107709,7 +107709,7 @@ GameObject:
   - component: {fileID: 743508607}
   - component: {fileID: 743508608}
   - component: {fileID: 743508609}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -108239,7 +108239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896202147}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -112271,6 +112271,7 @@ GameObject:
   - component: {fileID: 1799287145}
   - component: {fileID: 1799287144}
   - component: {fileID: 1799287149}
+  - component: {fileID: 1799287150}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -112332,11 +112333,11 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 1
+  m_UseAutoMass: 1
+  m_Mass: 13.312587
+  m_LinearDrag: 18
+  m_AngularDrag: 0.05
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: ef74ac8f572374bd99e4cdad9e49193f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -112466,6 +112467,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.19520378, y: 0.47360003}
   m_EdgeRadius: 0
+--- !u!114 &1799287150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799287141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2755dac2cf7ddc44843a90c2e835c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 1
+  attackOffset: {x: -3, y: 3, z: 0}
+  attackRange: 3.5
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1001 &2013791284
 PrefabInstance:
   m_ObjectHideFlags: 0

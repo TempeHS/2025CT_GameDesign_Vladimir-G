@@ -12,9 +12,10 @@ public class BossWeapon : MonoBehaviour
 
     public void Attack()
     {
+        float sign = Mathf.Sign(transform.lossyScale.x);
 
         Vector3 pos = transform.position;
-        pos += transform.right * attackOffset.x;
+        pos += transform.right * (attackOffset.x * sign);
         pos += transform.up * attackOffset.y;
 
         Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
