@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Boss_Run : StateMachineBehaviour
 {
-    public float maxChaseSpeed = 25f;
-    public float addForce = 10f;
-    public float attackRange = 50f;
+    public float maxChaseSpeed = 1f;
+    public float addForce = 1f;
+    public float attackRange = 20f;
 
     Transform player;
     Rigidbody2D rb;
@@ -27,7 +27,9 @@ public class Boss_Run : StateMachineBehaviour
 
         rb.velocity = new Vector2(direction * maxChaseSpeed * addForce, rb.velocity.y);
 
-        if (Vector2.Distance(player.position, rb.position) < attackRange)
+        float horizontalDistance = Mathf.Abs(player.position.x - rb.position.x);
+
+        if (horizontalDistance <= attackRange)
         {
             animator.SetTrigger("Attack");
         }
