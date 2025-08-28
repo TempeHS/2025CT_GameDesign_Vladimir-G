@@ -8,7 +8,7 @@ public class Boss_Run : StateMachineBehaviour
     public float maxChaseSpeed = 1f;
     public float addForce = 1f;
     public float attackRange = 10f;
-    public float spellRange = 10f;
+    public float spellRange = 20f;
 
     Transform player;
     Rigidbody2D rb;
@@ -33,12 +33,19 @@ public class Boss_Run : StateMachineBehaviour
 
         if (horizontalDistance <= attackRange)
         {
-            animator.SetTrigger("Attack");
+            if (Random.value < 0.5f)
+            {
+                Debug.Log("Attack Triggered");
+                animator.SetTrigger("Attack");
+            }
         }
-
-        if (horizontalDistance >= spellRange)
+        else if (horizontalDistance >= spellRange)
         {
-
+            if (Random.value < 0.5f)
+            {
+                Debug.Log("Spell Triggered");
+                animator.SetTrigger("CastSpell");
+            }
         }
 
         if (bossHp != null && bossHp.bossCurrentHealth == 25)
