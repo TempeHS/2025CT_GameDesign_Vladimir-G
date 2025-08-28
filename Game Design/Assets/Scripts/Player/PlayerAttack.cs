@@ -34,6 +34,8 @@ public class PlayerAttack : MonoBehaviour
 
             rb.velocity = Vector2.zero;
             rb.AddForce(Vector2.up * bounceForce, ForceMode2D.Impulse);
+
+            Debug.Log("PlayerDidDamage");
         }
     }
 }

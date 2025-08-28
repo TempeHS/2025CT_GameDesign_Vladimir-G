@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossHp : MonoBehaviour
 {
     [SerializeField] private float bossMaxHealth = 50f;
-    private float bossCurrentHealth;
+    public float bossCurrentHealth;
     private Animator animator;
     private float hitDuration = 1f;
 
