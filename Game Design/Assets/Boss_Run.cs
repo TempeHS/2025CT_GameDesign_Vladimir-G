@@ -42,9 +42,10 @@ public class Boss_Run : StateMachineBehaviour
 
         }
 
-        if (bossHp != null && bossHp.bossCurrentHealth == 47)
+        if (bossHp != null && bossHp.bossCurrentHealth == 25)
         {
             animator.SetBool("secondPhase", true);
+            animator.ResetTrigger("Attack");
             Debug.Log("BossChangeState");
             rb.velocity = Vector2.zero;
             return;
