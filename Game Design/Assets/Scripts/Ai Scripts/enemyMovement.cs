@@ -67,6 +67,3 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 }
-
-// playerTransform.position += Vector3.right * chaseSpeed * Time.deltaTime;
-// works like black hole
