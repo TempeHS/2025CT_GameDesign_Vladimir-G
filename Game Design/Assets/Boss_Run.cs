@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Boss_Run : StateMachineBehaviour
 {
     public float maxChaseSpeed = 1f;
     public float addForce = 1f;
-    public float attackRange = 10f;
+    public float attackRange = 100f;
     public float spellRange = 100f;
+
+    private float attackRangeSquare;
 
     Transform player;
     Rigidbody2D rb;
@@ -20,6 +23,7 @@ public class Boss_Run : StateMachineBehaviour
         rb = animator.GetComponent<Rigidbody2D>();
         lookAtPlayer = animator.GetComponent<BossLookAtPlayer>();
         bossHp = animator.GetComponent<BossHp>();
+        attackRangeSquare = attackRange * attackRange;
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -32,8 +36,13 @@ public class Boss_Run : StateMachineBehaviour
 
         float horizontalDistance = Mathf.Abs(player.position.x - rb.position.x);
 
-        if (horizontalDistance <= attackRange)
+        Vector2 delta = (Vector2)player.position - rb.position;
+        float squareDistance = delta.sqrMagnitude;
+        Debug.Log("LocatedDistance");
+
+        if (squareDistance <= attackRangeSquare)
         {
+            Debug.Log("InAttackRange");
             animator.SetTrigger("Attack");
         }
 
