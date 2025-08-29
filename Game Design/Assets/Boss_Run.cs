@@ -21,6 +21,7 @@ public class Boss_Run : StateMachineBehaviour
         rb = animator.GetComponent<Rigidbody2D>();
         lookAtPlayer = animator.GetComponent<BossLookAtPlayer>();
         bossHp = animator.GetComponent<BossHp>();
+        
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -31,9 +32,11 @@ public class Boss_Run : StateMachineBehaviour
         rb.velocity = new Vector2(direction * maxChaseSpeed * addForce, rb.velocity.y);
         float horizontalDistance = Mathf.Abs(player.position.x - rb.position.x);
 
+        Debug.Log($"Transition chase → dir:{direction} targetSpeed:{maxChaseSpeed} currentDrag:{rb.drag}");
+
         if (horizontalDistance <= attackRange)
         {
-            if (Random.value < 0.5f)
+            if (Random.value < 0.1f)
             {
                 Debug.Log("Attack Triggered");
                 animator.SetTrigger("Attack");
@@ -41,7 +44,7 @@ public class Boss_Run : StateMachineBehaviour
         }
         else if (horizontalDistance >= spellRange)
         {
-            if (Random.value < 0.5f)
+            if (Random.value < 0.1f)
             {
                 Debug.Log("Spell Triggered");
                 animator.SetTrigger("CastSpell");

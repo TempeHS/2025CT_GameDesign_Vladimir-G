@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Boss_Second_Phase : StateMachineBehaviour
 {
-    public float maxChaseSpeed = 10f;
-    public float addForce = 5f;
+    public float maxChaseSpeed = 1f;
+    public float addForce = 1f;
     public float attackRange = 10f;
     public float spellRange = 20f;
+    float nextActionTime = 0f;
+    public float actionInterval = 5f;  
 
     Transform player;
     Rigidbody2D rb;
@@ -29,23 +32,30 @@ public class Boss_Second_Phase : StateMachineBehaviour
         float direction = Mathf.Sign(player.position.x - rb.position.x);
         rb.velocity = new Vector2(direction * maxChaseSpeed * addForce, rb.velocity.y);
         float horizontalDistance = Mathf.Abs(player.position.x - rb.position.x);
+        
 
-        if (horizontalDistance <= attackRange)
+        Debug.Log($"Transition chase → dir:{direction} targetSpeed:{maxChaseSpeed} currentDrag:{rb.drag}");
+
+
+        if (Time.time < nextActionTime)
         {
-            if (Random.value < 0.5f)
-            {
-                Debug.Log("");
-                animator.SetTrigger("AttackSecondPhase");
-            }
+            return;
         }
-        else if (horizontalDistance >= spellRange)
+
+        if (Random.value < 0.5f)
         {
-            if (Random.value < 0.5f)
-            {
-                Debug.Log("");
-                animator.SetTrigger("SpellSecondPhase");
-            }
+            Debug.Log("Attack Triggered");
+            animator.SetTrigger("AttackSecondPhase");
+            nextActionTime = Time.time + actionInterval;
         }
+        else
+        {
+            Debug.Log("Spell Triggered");
+            animator.SetTrigger("SpellSecondPhase");
+            nextActionTime = Time.time + actionInterval;
+        }
+
+
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -54,3 +64,6 @@ public class Boss_Second_Phase : StateMachineBehaviour
         animator.ResetTrigger("SpellSecondPhase");
     }
 }
+
+
+

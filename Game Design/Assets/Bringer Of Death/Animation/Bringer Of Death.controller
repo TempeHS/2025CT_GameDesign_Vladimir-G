@@ -95,6 +95,7 @@ MonoBehaviour:
   addForce: 1
   attackRange: 10
   spellRange: 20
+  actionInterval: 1
 --- !u!1102 &-6599851543012351044
 AnimatorState:
   serializedVersion: 6
@@ -716,7 +717,7 @@ AnimatorStateTransition:
   m_ExitTime: 0
   m_HasExitTime: 0
   m_HasFixedDuration: 1
-  m_InterruptionSource: 2
+  m_InterruptionSource: 3
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 --- !u!206 &9029500253298648295
