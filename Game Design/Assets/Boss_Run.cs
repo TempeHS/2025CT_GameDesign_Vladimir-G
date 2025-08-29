@@ -53,7 +53,6 @@ public class Boss_Run : StateMachineBehaviour
             animator.SetBool("secondPhase", true);
             animator.ResetTrigger("Attack");
             Debug.Log("BossChangeState");
-            rb.velocity = Vector2.zero;
             return;
         }
     }

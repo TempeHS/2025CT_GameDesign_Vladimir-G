@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Boss_Second_Phase : StateMachineBehaviour
 {
-    public float maxChaseSpeed = 1f;
-    public float addForce = 1f;
+    public float maxChaseSpeed = 3f;
+    public float addForce = 1.5f;
     public float attackRange = 10f;
     public float spellRange = 20f;
 
@@ -20,7 +20,7 @@ public class Boss_Second_Phase : StateMachineBehaviour
         rb = animator.GetComponent<Rigidbody2D>();
         lookAtPlayer = animator.GetComponent<BossLookAtPlayer>();
         bossHp = animator.GetComponent<BossHp>();
-        rb.drag = 30f;
+        rb.velocity = Vector2.right * 5f;
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
