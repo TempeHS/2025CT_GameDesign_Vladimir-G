@@ -112539,7 +112539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 2
   attackOffsetSecondPhase: {x: -4, y: 2, z: 0}
-  attackRangeSecondPhase: 8
+  attackRangeSecondPhase: 7
   attackMask:
     serializedVersion: 2
     m_Bits: 512
