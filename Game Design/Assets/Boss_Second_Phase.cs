@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Boss_Second_Phase : StateMachineBehaviour
 {
-    public float maxChaseSpeed = 3f;
-    public float addForce = 1.5f;
+    public float maxChaseSpeed = 10f;
+    public float addForce = 5f;
     public float attackRange = 10f;
     public float spellRange = 20f;
 
