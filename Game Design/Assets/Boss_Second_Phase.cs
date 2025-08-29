@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class Boss_Run : StateMachineBehaviour
+public class Boss_Second_Phase : StateMachineBehaviour
 {
     public float maxChaseSpeed = 1f;
     public float addForce = 1f;
@@ -21,6 +20,7 @@ public class Boss_Run : StateMachineBehaviour
         rb = animator.GetComponent<Rigidbody2D>();
         lookAtPlayer = animator.GetComponent<BossLookAtPlayer>();
         bossHp = animator.GetComponent<BossHp>();
+        rb.drag = 30f;
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -35,32 +35,23 @@ public class Boss_Run : StateMachineBehaviour
         {
             if (Random.value < 0.5f)
             {
-                Debug.Log("Attack Triggered");
-                animator.SetTrigger("Attack");
+                Debug.Log("");
+                animator.SetTrigger("AttackSecondPhase");
             }
         }
         else if (horizontalDistance >= spellRange)
         {
             if (Random.value < 0.5f)
             {
-                Debug.Log("Spell Triggered");
-                animator.SetTrigger("CastSpell");
+                Debug.Log("");
+                animator.SetTrigger("SpellSecondPhase");
             }
-        }
-
-        if (bossHp != null && bossHp.bossCurrentHealth == 47)
-        {
-            animator.SetBool("secondPhase", true);
-            animator.ResetTrigger("Attack");
-            Debug.Log("BossChangeState");
-            rb.velocity = Vector2.zero;
-            return;
         }
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.ResetTrigger("Attack");
-        animator.ResetTrigger("CastSpell");
+        animator.ResetTrigger("AttackSecondPhase");
+        animator.ResetTrigger("SpellSecondPhase");
     }
 }
