@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public float bounceForce = 5f;
+    public float bounceForce = 12f;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

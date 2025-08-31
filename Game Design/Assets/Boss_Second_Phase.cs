@@ -10,7 +10,7 @@ public class Boss_Second_Phase : StateMachineBehaviour
     public float attackRange = 10f;
     public float spellRange = 20f;
     float nextActionTime = 0f;
-    public float actionInterval = 5f;  
+    public float actionInterval = 5f;
 
     Transform player;
     Rigidbody2D rb;
@@ -32,9 +32,9 @@ public class Boss_Second_Phase : StateMachineBehaviour
         float direction = Mathf.Sign(player.position.x - rb.position.x);
         rb.velocity = new Vector2(direction * maxChaseSpeed * addForce, rb.velocity.y);
         float horizontalDistance = Mathf.Abs(player.position.x - rb.position.x);
-        
 
-        Debug.Log($"Transition chase → dir:{direction} targetSpeed:{maxChaseSpeed} currentDrag:{rb.drag}");
+
+        //Debug.Log($"Transition chase → dir:{direction} targetSpeed:{maxChaseSpeed} currentDrag:{rb.drag}");
 
 
         if (Time.time < nextActionTime)

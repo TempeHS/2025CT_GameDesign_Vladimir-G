@@ -8,16 +8,20 @@ public class BossHp : MonoBehaviour
     public float bossCurrentHealth;
     private Animator animator;
     private float hitDuration = 1f;
+    [SerializeField] GameObject gameFinish;
+    [SerializeField] BossHealthBar healthBar;
 
     private void Awake()
     {
         bossCurrentHealth = bossMaxHealth;
         animator = GetComponent<Animator>();
+        healthBar = GetComponentInChildren<BossHealthBar>();
     }
 
     public void TakeBossDamage(float damage)
     {
         bossCurrentHealth -= damage;
+        healthBar.UpdateHealthBar(bossCurrentHealth, bossMaxHealth);
 
         if (bossCurrentHealth > 0)
         {
@@ -33,6 +37,7 @@ public class BossHp : MonoBehaviour
     {
         animator.SetTrigger("Die");
         Destroy(gameObject, 1f);
+        gameFinish.SetActive(true);
     }
 
     private IEnumerator BossLostHp()
