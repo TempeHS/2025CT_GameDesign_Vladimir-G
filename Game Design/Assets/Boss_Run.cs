@@ -31,13 +31,12 @@ public class Boss_Run : StateMachineBehaviour
         rb.velocity = new Vector2(direction * maxChaseSpeed * addForce, rb.velocity.y);
         float horizontalDistance = Mathf.Abs(player.position.x - rb.position.x);
 
-        //Debug.Log($"Transition chase → dir:{direction} targetSpeed:{maxChaseSpeed} currentDrag:{rb.drag}");
+        Debug.Log($" chase → dir:{direction} targetSpeed:{maxChaseSpeed} currentDrag:{rb.drag}");
 
         if (horizontalDistance <= attackRange)
         {
             if (Random.value < 0.1f)
             {
-                Debug.Log("Attack Triggered");
                 lookAtPlayer.LookAtPlayer();
                 animator.SetTrigger("Attack");
             }
@@ -46,7 +45,6 @@ public class Boss_Run : StateMachineBehaviour
         {
             if (Random.value < 0.1f)
             {
-                Debug.Log("Spell Triggered");
                 lookAtPlayer.LookAtPlayer();
                 animator.SetTrigger("CastSpell");
             }
@@ -59,6 +57,7 @@ public class Boss_Run : StateMachineBehaviour
             animator.ResetTrigger("CastSpell");
             lookAtPlayer.LookAtPlayer();
             Debug.Log("BossChangeState");
+            Debug.Log($" chase transtiiton 1 → dir:{direction} targetSpeed:{maxChaseSpeed} currentDrag:{rb.drag}");
             return;
         }
     }

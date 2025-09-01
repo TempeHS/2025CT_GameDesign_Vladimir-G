@@ -23,13 +23,6 @@ public class Boss_Second_Phase : StateMachineBehaviour
         rb = animator.GetComponent<Rigidbody2D>();
         lookAtPlayer = animator.GetComponent<BossLookAtPlayer>();
         bossHp = animator.GetComponent<BossHp>();
-
-
-        float dir = Mathf.Sign(player.position.x - rb.position.x);
-        rb.velocity = new Vector2(dir * maxChaseSpeed, rb.velocity.y);
-
-
-        rb.WakeUp();
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -41,7 +34,7 @@ public class Boss_Second_Phase : StateMachineBehaviour
         float horizontalDistance = Mathf.Abs(player.position.x - rb.position.x);
 
 
-        //Debug.Log($"Transition chase → dir:{direction} targetSpeed:{maxChaseSpeed} currentDrag:{rb.drag}");
+        Debug.Log($"secondPhase → dir:{direction} targetSpeed:{maxChaseSpeed} currentDrag:{rb.drag} addForce{addForce}");
 
 
         if (Time.time < nextActionTime)
@@ -51,15 +44,11 @@ public class Boss_Second_Phase : StateMachineBehaviour
 
         if (Random.value < 0.5f)
         {
-            Debug.Log("Attack Triggered");
-            lookAtPlayer.LookAtPlayer();
             animator.SetTrigger("AttackSecondPhase");
             nextActionTime = Time.time + actionInterval;
         }
         else
         {
-            Debug.Log("Spell Triggered");
-            lookAtPlayer.LookAtPlayer();
             animator.SetTrigger("SpellSecondPhase");
             nextActionTime = Time.time + actionInterval;
         }
@@ -71,9 +60,6 @@ public class Boss_Second_Phase : StateMachineBehaviour
             animator.ResetTrigger("SpellSecondPhase");
             return;
         }
-
-
-
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
