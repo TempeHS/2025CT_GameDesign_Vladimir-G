@@ -23,6 +23,13 @@ public class Boss_Second_Phase : StateMachineBehaviour
         rb = animator.GetComponent<Rigidbody2D>();
         lookAtPlayer = animator.GetComponent<BossLookAtPlayer>();
         bossHp = animator.GetComponent<BossHp>();
+
+
+        float dir = Mathf.Sign(player.position.x - rb.position.x);
+        rb.velocity = new Vector2(dir * maxChaseSpeed, rb.velocity.y);
+
+
+        rb.WakeUp();
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -45,15 +52,26 @@ public class Boss_Second_Phase : StateMachineBehaviour
         if (Random.value < 0.5f)
         {
             Debug.Log("Attack Triggered");
+            lookAtPlayer.LookAtPlayer();
             animator.SetTrigger("AttackSecondPhase");
             nextActionTime = Time.time + actionInterval;
         }
         else
         {
             Debug.Log("Spell Triggered");
+            lookAtPlayer.LookAtPlayer();
             animator.SetTrigger("SpellSecondPhase");
             nextActionTime = Time.time + actionInterval;
         }
+
+        if (bossHp.bossCurrentHealth == 1)
+        {
+            animator.SetBool("isDead", true);
+            animator.ResetTrigger("AttackSecondPhase");
+            animator.ResetTrigger("SpellSecondPhase");
+            return;
+        }
+
 
 
     }

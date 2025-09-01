@@ -27,7 +27,7 @@ public class BossHp : MonoBehaviour
         {
             StartCoroutine(BossLostHp());
         }
-        else
+        else if (bossCurrentHealth == 0)
         {
             Die();
         }
@@ -35,8 +35,17 @@ public class BossHp : MonoBehaviour
 
     private void Die()
     {
-        animator.SetTrigger("Die");
-        Destroy(gameObject, 1f);
+        animator.ResetTrigger("AttackSecondPhase");
+        animator.ResetTrigger("SpellSecondPhase");
+        animator.SetBool("secondPhase", false);
+        animator.SetTrigger("isDead");
+        Destroy(gameObject, 0.8f);
+        StartCoroutine(FinishGame());
+    }
+
+    private IEnumerator FinishGame()
+    {
+        yield return new WaitForSeconds(0.7f);
         gameFinish.SetActive(true);
     }
 

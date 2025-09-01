@@ -21,7 +21,6 @@ public class Boss_Run : StateMachineBehaviour
         rb = animator.GetComponent<Rigidbody2D>();
         lookAtPlayer = animator.GetComponent<BossLookAtPlayer>();
         bossHp = animator.GetComponent<BossHp>();
-
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -39,6 +38,7 @@ public class Boss_Run : StateMachineBehaviour
             if (Random.value < 0.1f)
             {
                 Debug.Log("Attack Triggered");
+                lookAtPlayer.LookAtPlayer();
                 animator.SetTrigger("Attack");
             }
         }
@@ -47,15 +47,17 @@ public class Boss_Run : StateMachineBehaviour
             if (Random.value < 0.1f)
             {
                 Debug.Log("Spell Triggered");
+                lookAtPlayer.LookAtPlayer();
                 animator.SetTrigger("CastSpell");
             }
         }
 
-        if (bossHp.bossCurrentHealth <= 47)
+        if (bossHp.bossCurrentHealth < 47)
         {
             animator.SetBool("secondPhase", true);
             animator.ResetTrigger("Attack");
             animator.ResetTrigger("CastSpell");
+            lookAtPlayer.LookAtPlayer();
             Debug.Log("BossChangeState");
             return;
         }
