@@ -10,5 +10,4 @@ public class BossHealthBar : MonoBehaviour
     {
         slider.value = currentValue - 1;
     }
-    void LateUpdate()
 }
