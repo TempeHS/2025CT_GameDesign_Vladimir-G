@@ -50,7 +50,7 @@ public class Boss_Run : StateMachineBehaviour
             }
         }
 
-        if (bossHp.bossCurrentHealth < 47)
+        if (bossHp.bossCurrentHealth < 25)
         {
             animator.SetBool("secondPhase", true);
             animator.ResetTrigger("Attack");
