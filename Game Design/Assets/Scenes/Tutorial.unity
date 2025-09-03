@@ -29546,8 +29546,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  chaseRadius: 8
   chase: 0
-  startingPoint: {fileID: 0}
+  startingPoint: {fileID: 2117219728}
 --- !u!114 &1023359446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32291,7 +32292,7 @@ GameObject:
   m_Layer: 0
   m_Name: EnemyStartPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -32304,7 +32305,7 @@ Transform:
   m_GameObject: {fileID: 2117219727}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.3532863, y: 5.540459, z: 0.064830236}
+  m_LocalPosition: {x: 2, y: 4.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32503,9 +32504,9 @@ SceneRoots:
   - {fileID: 6406572967377770842}
   - {fileID: 1375710084}
   - {fileID: 1023359444}
+  - {fileID: 2117219728}
   - {fileID: 113235808}
   - {fileID: 1997562004}
   - {fileID: 6027510583027511027}
   - {fileID: 1539900146}
   - {fileID: 1428244070999272551}
-  - {fileID: 2117219728}

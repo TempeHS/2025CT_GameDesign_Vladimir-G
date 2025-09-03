@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class FlyingEnemyMovement : MonoBehaviour
 {
     public float speed;
+    public float chaseRadius = 8f;
     public bool chase = false;
     public Transform startingPoint;
-    private GameObject player;
+    private Transform player;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()
@@ -19,16 +21,24 @@ public class FlyingEnemyMovement : MonoBehaviour
         if (player == null)
             return;
 
-        if (chase == true)
+        if (Vector2.Distance(transform.position, player.position) <= chaseRadius)
         {
-            Chase();
+            float distance = Vector2.Distance(transform.position, player.position);
+            chase = distance <= chaseRadius;
+
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+
+            Flip();
         }
-        Flip();
+        else
+        {
+            ReturnToStart();
+        }
     }
 
-    private void Chase()
+    private void ReturnToStart()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, startingPoint.position, speed * Time.deltaTime);
     }
 
     private void Flip()
@@ -41,5 +51,11 @@ public class FlyingEnemyMovement : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, chaseRadius);
     }
 }
