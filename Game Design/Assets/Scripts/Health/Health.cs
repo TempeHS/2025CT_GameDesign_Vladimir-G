@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     [SerializeField] private int deathSceneIndex = 8;
 
     public float currentHealth { get; private set; }
+    public float Iframes;
 
     private Animator animator;
     private bool dead;
@@ -24,13 +25,22 @@ public class Health : MonoBehaviour
 
     }
 
+    void Update()
+    {
+        if (Iframes > 0)
+        {
+            Iframes -= Time.deltaTime;
+        }
+    }
+
     public void TakeDamage(float _damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
 
-        if (currentHealth > 0)
+        if (currentHealth > 0 && Iframes <= 0)
         {
             animator.SetTrigger("hurt");
+            Iframes = 0.5f;
             //StartCoroutine(DisableColliderTemporarily(collider: playerCollider));
         }
         else
