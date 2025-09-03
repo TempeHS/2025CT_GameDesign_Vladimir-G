@@ -40,7 +40,7 @@ public class Health : MonoBehaviour
         if (currentHealth > 0 && Iframes <= 0)
         {
             animator.SetTrigger("hurt");
-            Iframes = 0.5f;
+            Iframes = 1.5f;
             //StartCoroutine(DisableColliderTemporarily(collider: playerCollider));
         }
         else
