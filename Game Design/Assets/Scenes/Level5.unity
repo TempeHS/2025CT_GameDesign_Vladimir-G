@@ -28967,6 +28967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 5
   deathSceneIndex: 8
+  Iframes: 1
   playerCollider: {fileID: 743508599}
 --- !u!114 &743508609
 MonoBehaviour:

@@ -35,9 +35,12 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float _damage)
     {
+        if (Iframes > 0)
+            return;
+
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
 
-        if (currentHealth > 0 && Iframes <= 0)
+        if (currentHealth > 0 && Iframes < 0)
         {
             animator.SetTrigger("hurt");
             Iframes = 1.5f;

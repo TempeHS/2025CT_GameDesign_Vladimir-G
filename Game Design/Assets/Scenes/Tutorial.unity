@@ -29003,6 +29003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 5
   deathSceneIndex: 8
+  Iframes: 1
   playerCollider: {fileID: 743508599}
 --- !u!114 &743508609
 MonoBehaviour:
@@ -31903,11 +31904,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8727236470860361165, guid: 486f089a5c4ba49cab5f9c390bcf5dbd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 8727236470860361165, guid: 486f089a5c4ba49cab5f9c390bcf5dbd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.8
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8727236470860361165, guid: 486f089a5c4ba49cab5f9c390bcf5dbd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32147,11 +32148,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8893482655383792718, guid: cb0b42398d95b4fd198d68bd0fec151c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 8893482655383792718, guid: cb0b42398d95b4fd198d68bd0fec151c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8893482655383792718, guid: cb0b42398d95b4fd198d68bd0fec151c, type: 3}
       propertyPath: m_LocalPosition.z
