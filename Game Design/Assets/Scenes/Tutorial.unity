@@ -1155,7 +1155,7 @@ GameObject:
   - component: {fileID: 85172602}
   m_Layer: 0
   m_Name: Weak
-  m_TagString: Weak
+  m_TagString: FlyingWeak
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1207,7 +1207,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.003377214, y: 0.029208675}
+  m_Offset: {x: 0.003377214, y: 0.031948622}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1218,7 +1218,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.11767793, y: 0.006340511}
+  m_Size: {x: 0.11767793, y: 0.011820406}
   m_EdgeRadius: 0
 --- !u!1 &113235804
 GameObject:
@@ -29525,7 +29525,7 @@ Transform:
   m_GameObject: {fileID: 1023359439}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 5, z: 0}
+  m_LocalPosition: {x: 2, y: 2, z: 0}
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -29545,7 +29545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd0889d6e9224829897c3589c98ce60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   chaseRadius: 8
   chase: 0
   startingPoint: {fileID: 2117219728}

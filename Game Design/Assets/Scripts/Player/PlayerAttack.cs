@@ -22,6 +22,20 @@ public class PlayerAttack : MonoBehaviour
             rb.AddForce(Vector2.up * bounceForce, ForceMode2D.Impulse);
         }
 
+        if (other.CompareTag("FlyingWeak"))
+        {
+            FlyingEnemyHealth enemy = other.GetComponentInParent<FlyingEnemyHealth>();
+            if (enemy == null) return;
+
+            enemy.TakeDamage(1f);
+
+            Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
+            if (rb == null) return;
+
+            rb.velocity = Vector2.zero;
+            rb.AddForce(Vector2.up * bounceForce, ForceMode2D.Impulse);
+        }
+
         if (other.CompareTag("bossWeakPoint"))
         {
             BossHp bossHp = other.GetComponentInParent<BossHp>();

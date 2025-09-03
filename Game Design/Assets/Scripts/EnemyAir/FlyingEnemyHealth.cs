@@ -31,7 +31,7 @@ public class FlyingEnemyHealth : MonoBehaviour
         {
             if (enemyCurrentHealth <= 0)
             {
-                GetComponent<EnemyMovement>().enabled = false;
+                GetComponent<FlyingEnemyMovement>().enabled = false;
                 Die();
             }
         }
@@ -45,11 +45,11 @@ public class FlyingEnemyHealth : MonoBehaviour
     private IEnumerator DisableMovementTemporarily()
     {
         movement.enabled = false;
-        animator.SetBool("isFlyingRunning", false);
+        animator.SetBool("isFlying", false);
         animator.SetBool("isFlyingHit", true);
         yield return new WaitForSeconds(stunDuration);
         animator.SetBool("isFlyingHit", false);
-        animator.SetBool("isFlyingRunning", true);
+        animator.SetBool("isFlying", true);
         movement.enabled = true;
     }
 }
