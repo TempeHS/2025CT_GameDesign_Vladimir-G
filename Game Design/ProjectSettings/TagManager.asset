@@ -13,6 +13,7 @@ TagManager:
   - bossWeakPoint
   - FlyingWeak
   - key
+  - Gem
   layers:
   - Default
   - TransparentFX
