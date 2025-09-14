@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
     private float speed = 8f;
-    private float JumpingPower = 14f;
+    private float JumpingPower = 16f;
     private float dashingPower = 18f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
