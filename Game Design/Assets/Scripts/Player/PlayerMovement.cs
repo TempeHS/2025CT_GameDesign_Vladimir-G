@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
     private float speed = 8f;
-    private float JumpingPower = 16f;
+    private float JumpingPower = 15f;
     private float dashingPower = 18f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private float wallJumpingCounter;
     private float wallJumpingDuration = 0.5f;
 
-    private Vector2 wallJumpingPower = new Vector2(8f, 12f);
+    private Vector2 wallJumpingPower = new Vector2(8f, 15f);
 
     private bool isFacingRight = true;
     private bool doubleJump;
