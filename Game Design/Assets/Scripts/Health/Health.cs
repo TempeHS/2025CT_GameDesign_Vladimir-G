@@ -36,7 +36,9 @@ public class Health : MonoBehaviour
     public void TakeDamage(float _damage)
     {
         if (Iframes > 0)
+        {
             return;
+        }
 
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
 

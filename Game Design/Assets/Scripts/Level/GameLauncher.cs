@@ -9,7 +9,9 @@ public class NewBehaviourScript : MonoBehaviour
     void Awake()
     {
         if (hasInitialized)
+        {
             return;
+        }
 
         hasInitialized = true;
         DontDestroyOnLoad(gameObject);
