@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 292703445546733935}
   - component: {fileID: 2325302841472716459}
   - component: {fileID: 4496021837705259328}
+  - component: {fileID: -5284836061136121551}
   m_Layer: 0
   m_Name: 'torch '
   m_TagString: Untagged
@@ -101,7 +102,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.7372549, g: 0.735849, b: 0.735849, a: 0.60784316}
+  m_Color: {r: 0.7372549, g: 0.7372549, b: 0.7372549, a: 0.60784316}
   m_Intensity: 2
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -135,3 +136,18 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &-5284836061136121551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9011599789201299606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9673f052b3ef1a3479187fa002bb53fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flickerIntesity: 0.3
+  flickersPerSecond: 1.5
+  speedRandomness: 0.8

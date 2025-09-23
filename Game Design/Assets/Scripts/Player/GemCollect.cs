@@ -21,7 +21,7 @@ public class GemCollect : MonoBehaviour
         if (other.gameObject.CompareTag("Gem") && waitAfterGemTime <= 0)
         {
             Destroy(other.gameObject);
-            gc.gemCount++;
+            gc.gemCount--;
             waitAfterGemTime = 0.5f;
         }
     }

@@ -16,7 +16,7 @@ public class GemController : MonoBehaviour
     {
         gemText.text = ": " + gemCount.ToString();
 
-        if (key != null && gemCount >= gemTotal)
+        if (key != null && gemCount == gemTotal)
         {
             key.SetActive(true);
         }

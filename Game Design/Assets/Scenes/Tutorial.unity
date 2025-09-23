@@ -31557,8 +31557,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 857323692}
     - target: {fileID: 3377530421347857294, guid: 5cabad0399ba2b641a0fc8270a224c54, type: 3}
-      propertyPath: gemTotal
+      propertyPath: gemCount
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3377530421347857294, guid: 5cabad0399ba2b641a0fc8270a224c54, type: 3}
+      propertyPath: gemTotal
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6892170485632430737, guid: 5cabad0399ba2b641a0fc8270a224c54, type: 3}
       propertyPath: m_Name
@@ -32271,6 +32275,13 @@ PrefabInstance:
     - target: {fileID: 3691696047290345046, guid: d46891931395948e5bc059d3a7e12645, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 440
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147404534903663998, guid: d46891931395948e5bc059d3a7e12645, type: 3}
+      propertyPath: m_text
+      value: '3
+
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7645592860279904352, guid: d46891931395948e5bc059d3a7e12645, type: 3}
       propertyPath: m_Pivot.x

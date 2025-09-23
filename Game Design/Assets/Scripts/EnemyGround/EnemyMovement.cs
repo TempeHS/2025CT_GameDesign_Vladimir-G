@@ -21,6 +21,9 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
+
+        isChasing = Vector2.Distance(transform.position, playerTransform.position) <= chaseDistance;
+
         if (isChasing)
         {
             animator.SetBool("isRunning", true);
@@ -44,7 +47,7 @@ public class EnemyMovement : MonoBehaviour
             }
 
 
-            if (patrolDestination == 0)
+            if (isChasing == false && patrolDestination == 0)
             {
                 animator.SetBool("isRunning", true);
                 transform.position = Vector2.MoveTowards(transform.position, partrolPoints[0].position, speed * Time.deltaTime);
