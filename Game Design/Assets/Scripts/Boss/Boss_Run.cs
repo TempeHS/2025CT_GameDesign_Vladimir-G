@@ -28,8 +28,12 @@ public class Boss_Run : StateMachineBehaviour
         lookAtPlayer.LookAtPlayer();
 
         float direction = Mathf.Sign(player.position.x - rb.position.x);
+        lookAtPlayer.LookAtPlayer();
         rb.velocity = new Vector2(direction * maxChaseSpeed * addForce, rb.velocity.y);
+        lookAtPlayer.LookAtPlayer();
         float horizontalDistance = Mathf.Abs(player.position.x - rb.position.x);
+
+        lookAtPlayer.LookAtPlayer();
 
         Debug.Log($" chase → dir:{direction} targetSpeed:{maxChaseSpeed} currentDrag:{rb.drag}");
 
@@ -39,6 +43,7 @@ public class Boss_Run : StateMachineBehaviour
             {
                 lookAtPlayer.LookAtPlayer();
                 animator.SetTrigger("Attack");
+                lookAtPlayer.LookAtPlayer();
             }
         }
         else if (horizontalDistance >= spellRange)
@@ -47,6 +52,7 @@ public class Boss_Run : StateMachineBehaviour
             {
                 lookAtPlayer.LookAtPlayer();
                 animator.SetTrigger("CastSpell");
+                lookAtPlayer.LookAtPlayer();
             }
         }
 

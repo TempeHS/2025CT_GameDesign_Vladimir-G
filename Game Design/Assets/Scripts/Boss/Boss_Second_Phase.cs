@@ -33,6 +33,8 @@ public class Boss_Second_Phase : StateMachineBehaviour
         rb.velocity = new Vector2(direction * maxChaseSpeed * addForce, rb.velocity.y);
         float horizontalDistance = Mathf.Abs(player.position.x - rb.position.x);
 
+        lookAtPlayer.LookAtPlayer();
+
 
         Debug.Log($"secondPhase → dir:{direction} targetSpeed:{maxChaseSpeed} currentDrag:{rb.drag} addForce{addForce}");
 
@@ -44,13 +46,17 @@ public class Boss_Second_Phase : StateMachineBehaviour
 
         if (Random.value < 0.5f)
         {
+            lookAtPlayer.LookAtPlayer();
             animator.SetTrigger("AttackSecondPhase");
             nextActionTime = Time.time + actionInterval;
+            lookAtPlayer.LookAtPlayer();
         }
         else
         {
+            lookAtPlayer.LookAtPlayer();
             animator.SetTrigger("SpellSecondPhase");
             nextActionTime = Time.time + actionInterval;
+            lookAtPlayer.LookAtPlayer();
         }
 
         if (bossHp.bossCurrentHealth == 1)

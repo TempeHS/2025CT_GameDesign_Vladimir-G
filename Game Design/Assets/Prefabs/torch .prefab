@@ -148,6 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9673f052b3ef1a3479187fa002bb53fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flickerIntesity: 0.2
+  flickerIntesity: 0.4
   flickersPerSecond: 3.2
-  speedRandomness: 0.3
+  speedRandomness: 0.5
