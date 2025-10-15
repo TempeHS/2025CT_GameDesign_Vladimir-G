@@ -1,10 +1,10 @@
-# Project Title
+# Game Design 2025 - Vladimir G 
 
-Simple overview of use/purpose.
+This was a self directed project creating a 2d game in Unity, over two terms working in class and outside of school. Facing many problems and overcoming them I have managed to create a fleshed out a playable state of the game. It is a game focusing on the player reaching a start point to end point while avoiding obstacles.
 
-## Description
+## All features within my game
 
-An in-depth paragraph about your project and overview of use.
+The following sections below will explain all features I have implemented withing the guidance of tutorials online.
 
 ## Getting Started
 
