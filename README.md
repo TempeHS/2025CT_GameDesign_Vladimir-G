@@ -6,6 +6,33 @@ This was a self directed project creating a 2d game in Unity, over two terms wor
 
 The following sections below will explain all features I have implemented withing the guidance of tutorials online and people I collabed with.
 
+#### Sections
+| Section | Content |
+| ------- | ------- |
+|Player|Movement| 
+||HP|
+||Collectables|
+|||
+|Game|GameManager|
+|||
+|Menus|UI|
+|||
+|Level|UI|
+||Objects|
+||Tilemaps|
+||Spikes|
+||Camera|
+||Light|
+|||
+|AI|EnemyGround|
+||EnemyAir|
+|||
+|Boss|DeathBringer|
+
+</br>
+</br>
+</br>
+
 ### Movement    :runner:
 
 | Keybind | Actions |
@@ -16,8 +43,10 @@ The following sections below will explain all features I have implemented within
 | Space | :arrow_up: Jump |
 | Shift | :fast_forward: Dash  |
 | Double Space | :arrow_up: :arrow_up: Double Jump |
+| Space + A or D|:arrow_up: :arrow_left: :arrow_right: Wall Jump|
 
-//Add a video of movement in//
+https://github.com/user-attachments/assets/22cc96df-b7b2-4962-b9dc-ce8599f5ee0a
+
 
 #### Implementing mechanics into the game:
 
@@ -27,7 +56,9 @@ For the dash I followed a Bendux tutorial again. It provided a simple and easy w
 
 To add a drop down which had by far the most errors when attemtpiting to implementing. As when switching from using gameobjects in the hierachy to tilemap colliders the orignal code from GameCodeLibrary would not work. To solve this problem I collabed with Copilot, and learnt I had to use a different type of disableing collider for my player where it would just disable Physics 2D instead of Player collider fixing any issues with colliders after and dropping through the floor.
 
-To import the double jump I used a tutorial by game code library. It is a simple code where it would count how many jumps and limiting any more jumps after two. 
+<img width="699" height="538" alt="image" src="https://github.com/user-attachments/assets/af4b8f01-a47a-459f-97f5-de0125abf851" /> </br>
+
+To make the double jump I used a tutorial by game code library. It is a simple code where it would count how many jumps and limiting any more jumps after two. 
 
 #### Tutorials used:
 
@@ -38,7 +69,7 @@ To import the double jump I used a tutorial by game code library. It is a simple
 | DropDown | https://www.youtube.com/watch?v=aWdwQJbg1Ds |
 | Double Jump | https://www.youtube.com/watch?v=OT537RfNzCU |
 
-### idkdkdkdkdkdk
+### idkdkdkdk
 
 ## Authors
 
