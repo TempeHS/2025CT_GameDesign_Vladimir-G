@@ -4,7 +4,7 @@ This was a self directed project creating a 2d game in Unity, over two terms wor
 
 ## All features within my game    :video_game:
 
-The following sections below will explain all features I have implemented withing the guidance of tutorials online and people I collabed with.
+The following sections below will explain all features I have implemented withing the guidance of tutorials online and people I have collabed with.
 
 #### Sections
 | Section | Content |
@@ -56,6 +56,7 @@ To complete my basic movement which include jump, and moving left and right. To 
 
 For the dash I followed a Bendux tutorial again. It provided a simple and easy way to implement a dash mechanic, by appyling force and diabeling gravity allowing the player to dash straight. 
 
+
 To add a drop down which had by far the most errors when attemtpiting to implementing. As when switching from using gameobjects in the hierachy to tilemap colliders the orignal code from GameCodeLibrary would not work. To solve this problem I collabed with Copilot, and learnt I had to use a different type of disableing collider for my player where it would just disable Physics 2D instead of Player collider fixing any issues with colliders after and dropping through the floor.
 
 <img width="699" height="538" alt="image" src="https://github.com/user-attachments/assets/af4b8f01-a47a-459f-97f5-de0125abf851" /> </br>
@@ -75,12 +76,12 @@ To make the double jump I used a tutorial by game code library. It is a simple c
 </br>
 </br>
 
+<a id="hp"></a>
 ### HP :heart:
 
 For the player, there is a healthbar system implemented. This was by far one of the most challenging mechanics to implement, I went through at least 7 tutorial attempting to add this mechanic into my game. Then I stumbled on this tutorial which after a small debug I was able to implement a working heart system. 
 
 The way the Hp worked is, it would set a player HP, current = total at the start. And using maths to be able to subtract or increase the Heart amount. Then it would update the HealthBar System, which is what the player sees. Allowing for my hearts to be able to update and function. It was a very simple way to display and write the code yet it outclassed many other tutorials.
-
 
 But there was still one more addition which just seemed necessary to implement. A heart collecting system. However I did not want a boring simple way to pick up the hearts, I wanted to be able to do it straight from the tilemaps. So I began to figure a solution out. Well I created a update function which would allow for the Hp to update.
 
