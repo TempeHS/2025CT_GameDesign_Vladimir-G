@@ -10,7 +10,7 @@ The following sections below will explain all features I have implemented within
 | Section | Content |
 | ------- | ------- |
 |[Player](#player)|[Movement](#movement)| 
-||HP|
+||[HP](#hp)|
 ||Collectables|
 |||
 |Game|GameManager|
