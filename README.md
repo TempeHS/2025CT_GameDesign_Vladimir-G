@@ -9,7 +9,7 @@ The following sections below will explain all features I have implemented within
 #### Sections
 | Section | Content |
 | ------- | ------- |
-|Player|Movement| 
+|[Player](#player)|Movement| 
 ||HP|
 ||Collectables|
 |||
@@ -29,9 +29,9 @@ The following sections below will explain all features I have implemented within
 |||
 |Boss|DeathBringer|
 
-</br>
-</br>
-</br>
+<br>
+
+## Player
 
 ### Movement    :runner:
 
@@ -69,7 +69,35 @@ To make the double jump I used a tutorial by game code library. It is a simple c
 | DropDown | https://www.youtube.com/watch?v=aWdwQJbg1Ds |
 | Double Jump | https://www.youtube.com/watch?v=OT537RfNzCU |
 
-### idkdkdkdk
+</br>
+</br>
+</br>
+
+### HP :heart:
+
+For the player, there is a healthbar system implemented. This was by far one of the most challenging mechanics to implement, I went through at least 7 tutorial attempting to add this mechanic into my game. Then I stumbled on this tutorial which after a small debug I was able to implement a working heart system. 
+
+The way the Hp worked is, it would set a player HP, current = total at the start. And using maths to be able to subtract or increase the Heart amount. Then it would update the HealthBar System, which is what the player sees. Allowing for my hearts to be able to update and function. It was a very simple way to display and write the code yet it outclassed many other tutorials.
+
+
+But there was still one more addition which just seemed necessary to implement. A heart collecting system. However I did not want a boring simple way to pick up the hearts, I wanted to be able to do it straight from the tilemaps. So I began to figure a solution out. Well I created a update function which would allow for the Hp to update.
+
+</br>
+
+<img width="580" height="88" alt="image" src="https://github.com/user-attachments/assets/fb400f41-6a8c-42b8-a291-e4da033942bc" />
+
+</br>
+
+But the problem is I didn't know how to write the intial tilemap code. So I resorted to asking Copilot how to do it after seacrhing the internet and not finding a way to implement the mechanic the exact way I wanted it to work. The solution it told me is to take the current PlayerPosition and check if it has collided with a HeartTilemap. Basically resulting in any hearts which a player might stumble on to be collected.
+
+https://github.com/user-attachments/assets/c7b7848a-dec7-4591-81cb-b45417c1b248
+
+
+#### Tutorials used:
+
+| Action | Tutorials :pencil: |
+| ------- | ------- |
+| HeartSystem | https://www.youtube.com/watch?v=yxzg8jswZ8A |
 
 ## Authors
 
