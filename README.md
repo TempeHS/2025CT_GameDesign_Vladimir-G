@@ -34,7 +34,7 @@ The following sections below will explain all features I have implemented within
 <a id="player"></a>
 ## Player
 
-<a id="player-movement"></a>
+<a id="movement"></a>
 ### Movement    :runner:
 
 | Keybind | Actions |
