@@ -9,7 +9,7 @@ The following sections below will explain all features I have implemented within
 #### Sections
 | Section | Content |
 | ------- | ------- |
-|[Player](#player)|Movement| 
+|[Player](#player)|[Movement](#movement) | 
 ||HP|
 ||Collectables|
 |||
