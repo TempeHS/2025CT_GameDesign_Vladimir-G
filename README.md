@@ -1,4 +1,4 @@
-<img width="382" height="246" alt="image" src="https://github.com/user-attachments/assets/f9fa041b-1699-4f4d-a6c0-338b65729efc" /># :space_invader: Game Design 2025 - Vladimir G :space_invader:
+# :space_invader: Game Design 2025 - Vladimir G :space_invader:
 
 This was a self directed project creating a 2d game in Unity, over two terms working in class and outside of school. Facing many problems and overcoming them I have managed to create a fleshed out a playable state of the game. It is a game focusing on the player reaching a start point to end point while avoiding obstacles.
 
