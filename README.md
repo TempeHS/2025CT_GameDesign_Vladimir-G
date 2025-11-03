@@ -62,7 +62,12 @@ If colliding with enemies using an on void collision trigger 2D, the player will
 
 To deal damage the player must jump on the enemy to collide with the enemy weak hit box. Then once 3 damage is dealt the enemy dies.
 
-![gif for enemy ground-1](https://github.com/user-attachments/assets/b2e9a684-088c-4219-94c1-c3ff7a922ccb)
+| Ground | Flying |
+| ------- | ------- |
+|![enemy gifsssss splease work](https://github.com/user-attachments/assets/7c300d80-d69f-460d-8de0-073c40392fbe) | ![pleaseeee flying enemhy](https://github.com/user-attachments/assets/def6b3e7-d445-4e03-919c-a3ea5fc216b8)
+ |
+
+
 
 ### Collectibles
 
