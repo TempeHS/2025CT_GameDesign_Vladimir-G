@@ -64,8 +64,6 @@ To deal damage the player must jump on the enemy to collide with the enemy weak 
 
 ![gif for enemy ground-1](https://github.com/user-attachments/assets/b2e9a684-088c-4219-94c1-c3ff7a922ccb)
 
-![gif for enemy ground-2](https://github.com/user-attachments/assets/4b5365e5-f006-462a-98f8-a99bc9dc4575)
-
 ### Collectibles
 
 <what ar those for>
