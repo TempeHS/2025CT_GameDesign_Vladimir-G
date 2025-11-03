@@ -65,7 +65,6 @@ To deal damage the player must jump on the enemy to collide with the enemy weak 
 | Ground | Flying |
 | ------- | ------- |
 |![enemy gifsssss splease work](https://github.com/user-attachments/assets/7c300d80-d69f-460d-8de0-073c40392fbe) | ![pleaseeee flying enemhy](https://github.com/user-attachments/assets/def6b3e7-d445-4e03-919c-a3ea5fc216b8)
- |
 
 
 
