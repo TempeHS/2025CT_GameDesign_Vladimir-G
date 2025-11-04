@@ -12,6 +12,7 @@
   - [Collectibles](#collectibles)
 - [Developer Documentation](#development-documentation)
 - [Acknowledgements](#acknowledgements)
+- [Tutorial References](#tutorial-references)
 
 ## About the Game
 
@@ -80,22 +81,75 @@ Collectibles in the form of gems are scattered around the map. Once the player h
 
 ## Development Documentation
 
-To complete the project, the devolping software used was Unity and Visual Studio Code.
+To build the project, the software used was Unity and Visual Studio Code.
+I used Unity to manage assets, set properties, create state machines and so on.
+I used Visual Studio Code to edit scripts.
 
-**Problems faced during development**
-- Double jump only working from the ground
-- Wall jump feel more natural
-- Platform drop colliders functioning correctly
+<unity and vs code screenshots>
+
+### Tutorials
+
+<
+I actiely looked up tutotirals online and followed the steps from the tutorials
+
+when I had toroubl I asked co-pilot to explain the code, find issues and suggest the changes
+(Some code samples were developed with assistance from peers and copilot usage. )
+
+For examp.e, I used Bendux tutotrials to implement, jumps, left and right movement, learnt how to apply basic force using 3d vectors.
+Similarly, I folloed Bendux tutorial to implemnt Dash feature, e.g. i learned to disable gravity for the duration of the dash.
+
+
+Other codes were created independently from understanding and knowledge of previous codes. An example is the boss code, the only tutorial used was a Brackeys, but I managed to develop a different state functions sctipts by myself from knowledge learned.
+(my understanding of the technology improved after implementing few features following tutorials
+i was able to write more code afterwards using knowledge from previous tasks
+)
+>
+
+### AI Assistance
+
+<I used co-pilot to help me implement features of the game.
+I utilised the AI as an assistant in the following ways
+- Ask AI to explain the code to me, including code from the tutorials
+- Ask AI to help me debug the code to find issues
+- Get help with designing new features by asking for high level code structure
+
+I learned using AI as a new skill
+One approach I found useful is to describe the behavior I wanted to implement and ask for suggestions and step by step guidance so that I understood each change I make to the project
+(This furthermore reinforced my skills as a developer and understanding of programming. )
+>
+
+
+### Animations
+
+<
+Animations is one of the key features of the project.
+I particurarly enjoyed building animation state machines and creating smooth transitions between animation states
+here's an example of animation state machine for player movement
+<screenshot of animation state machine here>
+
+The animations for Boss.....
+<boss animation state macin screenshot>
+
+### Physics
+
+<
+Physics is an important part of the game.
+Because it's a platformer game the player character moves along the ground and jump on the platforms
+I have implemented jumps down through the platform the player stands on which required temporarily disabling colliders
+Wall jumps are a key feature of the game and player must use them to complete the game
+To implement the wall jump I had to control the character's physics, e.g. to implement sliding down the wall as part of wall jump.
+Finally, hitting enemies on the head required working with colliders as well. E.g. make the player bounce up after hitting the enemy.
+When the player is hit it is immune to futher attacks for a short time, implemented by disabling player's hit box.
+>
+
 
 ## Acknowledgements
 
-Boss: https://assetstore.unity.com/packages/2d/characters/bringer-of-death-free-195719 by Clembod
+- Boss: https://assetstore.unity.com/packages/2d/characters/bringer-of-death-free-195719 by Clembod
+- Player: https://assetstore.unity.com/packages/2d/characters/pixel-adventure-1-155360 by PixelFrog
+- Tilemaps and Enemies: https://assetstore.unity.com/packages/2d/environments/stomper-platform-assets-195244 by Ansimuz
 
-Player: https://assetstore.unity.com/packages/2d/characters/pixel-adventure-1-155360 by PixelFrog
-
-Tilemaps and Enemies: https://assetstore.unity.com/packages/2d/environments/stomper-platform-assets-195244 by Ansimuz
-
-<add tutorials used>
+## Tutorial References
 
 | Action | Tutorials |
 | ------- | ------- |
@@ -119,7 +173,3 @@ Tilemaps and Enemies: https://assetstore.unity.com/packages/2d/environments/stom
 | Boss | https://www.youtube.com/watch?v=AD4JIXQDw0s|
 | Boss HealthBar | https://www.youtube.com/watch?v=bRcMVkJS3XQ |
 
-Note:
-Some code samples were developed with assistance from peers and copilot usage. I provided the behaviour and logic I wanted the code to do, and integrated it through suggestions and code examples. This furthermore reinforced my skills as a developer and understanding of programming. 
-
-Other codes were created independently from understanding and knowledge of previous codes. An example is the boss code, the only tutorial used was a Brackeys, but I managed to develop a different state functions sctipts by myself from knowledge learned.
