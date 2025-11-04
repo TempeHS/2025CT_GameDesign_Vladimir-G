@@ -10,7 +10,7 @@
   - [Health Points](#health-points)
   - [Enemies](#enemies)
   - [Collectibles](#collectibles)
-- [Developer Documentation](#developer-documentation)
+- [Developer Documentation](#development-documentation)
 - [Acknowledgements](#acknowledgements)
 
 ## About the Game
@@ -81,7 +81,7 @@ To complete the project, the devolping software used was Unity and Visual Studio
 - Wall jump feel more natural
 - Platform drop colliders functioning correctly
 
-## Acknowledgments
+## Acknowledgements
 
 <add artist here>
 
