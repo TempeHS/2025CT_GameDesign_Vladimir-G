@@ -66,11 +66,17 @@ To deal damage the player must jump on the enemy to collide with the enemy weak 
 | ------- | ------- |
 |![enemy gifsssss splease work](https://github.com/user-attachments/assets/7c300d80-d69f-460d-8de0-073c40392fbe) | ![pleaseeee flying enemhy](https://github.com/user-attachments/assets/def6b3e7-d445-4e03-919c-a3ea5fc216b8)
 
-
-
 ### Collectibles
 
-<what ar those for>
+The collectibles were implemented as another feature to bring more life into the game. The edition of collectibles forces the player to engage with the entire level significantly changing the gameplay.
+
+Collectibles in the form of gems are scattered around the map. Once the player has collected all the gems a key will appear. This then allows the player to unlock the door and finish the level.
+
+|Gems|Key|Door|
+| ------- | ------- | -------- |
+|![gem key](https://github.com/user-attachments/assets/29487519-24df-40c7-a54f-b9addb28b6d3) |  ![key right size](https://github.com/user-attachments/assets/1a5d8e59-0db4-40c6-8224-acfd754dd357) | ![door](https://github.com/user-attachments/assets/9576708b-e6c8-4e9f-b139-a552390dfa52) |
+
+
 
 ## Development Documentation
 
@@ -83,7 +89,11 @@ To complete the project, the devolping software used was Unity and Visual Studio
 
 ## Acknowledgements
 
-<add artist here>
+Boss: https://assetstore.unity.com/packages/2d/characters/bringer-of-death-free-195719 by Clembod
+
+Player: https://assetstore.unity.com/packages/2d/characters/pixel-adventure-1-155360 by PixelFrog
+
+Tilemaps and Enemies: https://assetstore.unity.com/packages/2d/environments/stomper-platform-assets-195244 by Ansimuz
 
 <add tutorials used>
 
@@ -107,12 +117,9 @@ To complete the project, the devolping software used was Unity and Visual Studio
 | Ground Enemy Chase | https://www.youtube.com/watch?v=ptLg-J67vIU&list=PLSR2vNOypvs72jRSvOEWv448Tle9nDw1Z&index=4 |
 | Flying Enemy Logic | https://www.youtube.com/watch?v=TIXY0TR7Z0g | 
 | Boss | https://www.youtube.com/watch?v=AD4JIXQDw0s|
+| Boss HealthBar | https://www.youtube.com/watch?v=bRcMVkJS3XQ |
 
 Note:
 Some code samples were developed with assistance from peers and copilot usage. I provided the behaviour and logic I wanted the code to do, and integrated it through suggestions and code examples. This furthermore reinforced my skills as a developer and understanding of programming. 
 
-Other codes were created independently from understanding and knowledge of previous codes. An example is the boss code, the only tutorial used Brackeys, but I managed to develop a different state functions sctipts by myself from knowledge learned.
-
-Inspiration, code snippets, etc.
-* [Github md syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-* [TempeHS Unity template](https://github.com/TempeHS/TempeHS_Unity_DevContainer)
+Other codes were created independently from understanding and knowledge of previous codes. An example is the boss code, the only tutorial used was a Brackeys, but I managed to develop a different state functions sctipts by myself from knowledge learned.
