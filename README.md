@@ -87,6 +87,32 @@ To complete the project, the devolping software used was Unity and Visual Studio
 
 <add tutorials used>
 
+| Action | Tutorials |
+| ------- | ------- |
+| Basic Movement | https://www.youtube.com/watch?v=K1xZ-rycYY8. |
+| Dash | https://www.youtube.com/watch?v=2kFGmuPHiA0. |
+| DropDown | https://www.youtube.com/watch?v=aWdwQJbg1Ds |
+| Double Jump | https://www.youtube.com/watch?v=OT537RfNzCU |
+| HeartSystem | https://www.youtube.com/watch?v=yxzg8jswZ8A |
+| Learning to implement animations | https://www.youtube.com/watch?v=AdQz2wStdLY |
+| Collectable System | https://www.youtube.com/watch?v=5GWRPwuWtsQ |
+| UI| https://www.youtube.com/watch?v=DX7HyN7oJjE|
+| Level Select| https://www.youtube.com/watch?v=2XQsKNHk1vk|
+| Level Lock | https://www.youtube.com/watch?v=2XQsKNHk1vk |
+| Pause Menu | https://www.youtube.com/watch?v=MNUYe0PWNNs |
+| Scene Managment | https://www.youtube.com/watch?v=E25JWfeCFPA|
+| Ground Enemy Attack | https://www.youtube.com/watch?v=KF3EVjOhN4c&list=PLSR2vNOypvs72jRSvOEWv448Tle9nDw1Z&index=1 |
+| Ground Enemy Player Attack | https://www.youtube.com/watch?v=ICVkhZ5s970&list=PLSR2vNOypvs72jRSvOEWv448Tle9nDw1Z&index=2|
+| Ground Enemy Patrol | https://www.youtube.com/watch?v=l7VyxIzAIAc&list=PLSR2vNOypvs72jRSvOEWv448Tle9nDw1Z&index=3|
+| Ground Enemy Chase | https://www.youtube.com/watch?v=ptLg-J67vIU&list=PLSR2vNOypvs72jRSvOEWv448Tle9nDw1Z&index=4 |
+| Flying Enemy Logic | https://www.youtube.com/watch?v=TIXY0TR7Z0g | 
+| Boss | https://www.youtube.com/watch?v=AD4JIXQDw0s|
+
+Note:
+Some code samples were developed with assistance from peers and copilot usage. I provided the behaviour and logic I wanted the code to do, and integrated it through suggestions and code examples. This furthermore reinforced my skills as a developer and understanding of programming. 
+
+Other codes were created independently from understanding and knowledge of previous codes. An example is the boss code, the only tutorial used Brackeys, but I managed to develop a different state functions sctipts by myself from knowledge learned.
+
 Inspiration, code snippets, etc.
 * [Github md syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 * [TempeHS Unity template](https://github.com/TempeHS/TempeHS_Unity_DevContainer)
