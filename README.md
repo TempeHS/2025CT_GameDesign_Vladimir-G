@@ -169,7 +169,7 @@ Choosing a state machine for the boss allowed for more complex scenarios to occu
 
 ### Physics
 
-
+>
 Physics is an important part of the game.
 Because it's a platformer game, the player character moves along the ground and jump on the platforms
 I have implemented jumps down through the platform the player stands on which required temporarily disabling colliders
@@ -178,6 +178,8 @@ To implement the wall jump I had to control the character's physics, e.g. to imp
 Finally, hitting enemies on the head required working with colliders as well. E.g. make the player bounce up after hitting the enemy.
 When the player is hit it is immune to futher attacks for a short time, implemented by disabling player's hit box.
 >
+
+Without physics, a 2d platformer would be impossible to make. Physics is the backbone of the game; without physics, all of the following in the gif wouldn't be possible.
 
 ## Acknowledgements
 
