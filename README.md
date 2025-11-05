@@ -1,4 +1,4 @@
-# :space_invader: Game Design 2025 - Vladimir G :space_invader
+# :space_invader: Game Design 2025 - Vladimir G :space_invader:
 
 ## Table of Contents
 
@@ -11,6 +11,10 @@
   - [Enemies](#enemies)
   - [Collectibles](#collectibles)
 - [Developer Documentation](#development-documentation)
+  - [Tutorials](#tutorials)
+  - [AI Assistance](#ai-assistance)
+  - [Animations](#animations)
+  - [Physics](#physics)
 - [Acknowledgements](#acknowledgements)
 - [Tutorial References](#tutorial-references)
 
@@ -77,8 +81,6 @@ Collectibles in the form of gems are scattered around the map. Once the player h
 | ------- | ------- | -------- |
 |![gem key](https://github.com/user-attachments/assets/29487519-24df-40c7-a54f-b9addb28b6d3) |  ![key right size](https://github.com/user-attachments/assets/1a5d8e59-0db4-40c6-8224-acfd754dd357) | ![door](https://github.com/user-attachments/assets/9576708b-e6c8-4e9f-b139-a552390dfa52) |
 
-
-
 ## Development Documentation
 
 To build the project, the software was used Unity and Visual Studio Code.
@@ -89,8 +91,6 @@ Used Visual Studio Code to create and edit scripts.
 
 <img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/4d6760a9-6596-48cd-8bbd-bf70bb4ef8c5" />
 <img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/4a04842c-b41f-4a65-9db6-d6585bf53994" />
-
-
 
 ### Tutorials
 
@@ -120,9 +120,9 @@ This allowed me to further reinforce my skills as a developer and what good usag
 
 Animations are one of the key features of the project. 
 
-Animations were by far one of the most challenging features to implement. Taking countless hours from different tutorials to be able to implement within my game. Having to adapt code to fit the animations and learning transitions all came with time, but provided me with new skills after spending so long. In hindsight, the implementation of animations not only improved my game but the my overall understanding of code and game engine builders.
+Animations were by far one of the most challenging features to implement. Taking countless hours from different tutorials to be able to implement within my game. Having to adapt code to fit the animations and learning transitions all came with time, but provided me with new skills after spending so long learning animations. In hindsight, the implementation of animations not only improved my game but the my overall understanding of code and game engine builders.
 
-**Player**
+#### Player
 
 This is an example of an animation tree for my player.
 
@@ -143,7 +143,7 @@ Multiple states were merged to provide more clarity.
 
 For the movement, using rb velocities was more efficient than addForce. Direct velocity control provides more responsive movement, enhancing the platformer experience.
 
-**Boss**
+#### Boss
 
 The Boss uses a state machine for the Animations. This is different from the player as it allows for code to 'attach' to the animations. Allowing for certain code to trigger and run at certain animations.
 
@@ -178,8 +178,6 @@ Without physics, a 2d platformer would be impossible to make. Physics is the bac
 - When the player is hit, adding i frames
 
 <img width="336" height="579" alt="image" src="https://github.com/user-attachments/assets/6207c4f0-7e57-46f5-b254-2b3b754832f3" /> <img width="332" height="579" alt="image" src="https://github.com/user-attachments/assets/dba154e0-8d76-4708-9578-7901c2ee28ba" />
-
-
 
 ## Acknowledgements
 
