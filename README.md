@@ -81,54 +81,75 @@ Collectibles in the form of gems are scattered around the map. Once the player h
 
 ## Development Documentation
 
-To build the project, the software used was Unity and Visual Studio Code.
-I used Unity to manage assets, set properties, create state machines and so on.
-I used Visual Studio Code to edit scripts.
+To build the project, the software which was used were Unity and Visual Studio Code.
 
-<unity and vs code screenshots>
+Used Unity to manage assets, set properties, create state machines and so on it allowed me to build the game.
+
+Used Visual Studio Code to create and edit scripts.
+
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/4d6760a9-6596-48cd-8bbd-bf70bb4ef8c5" />
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/4a04842c-b41f-4a65-9db6-d6585bf53994" />
+
+
 
 ### Tutorials
 
-<
-I actiely looked up tutotirals online and followed the steps from the tutorials
+To learn how to create most things within my game, I used tutorials online to develop my own game and code.
 
-when I had toroubl I asked co-pilot to explain the code, find issues and suggest the changes
-(Some code samples were developed with assistance from peers and copilot usage. )
+When the tutorials would not work, I would first look for a different tutorial. If all fails, I ask Copilot how to solve the problem. Making sure I understood the code before implementing.
 
-For examp.e, I used Bendux tutotrials to implement, jumps, left and right movement, learnt how to apply basic force using 3d vectors.
-Similarly, I folloed Bendux tutorial to implemnt Dash feature, e.g. i learned to disable gravity for the duration of the dash.
+Tutorials was the biggest refrence used when creating the game.
 
-
-Other codes were created independently from understanding and knowledge of previous codes. An example is the boss code, the only tutorial used was a Brackeys, but I managed to develop a different state functions sctipts by myself from knowledge learned.
-(my understanding of the technology improved after implementing few features following tutorials
-i was able to write more code afterwards using knowledge from previous tasks
-)
->
+Other codes were created independently from understanding and knowledge of previous codes. An example is the boss code, the only tutorial used was a Brackeys, but I managed to develop a different state functions scripts by myself from knowledge learned.
 
 ### AI Assistance
 
-<I used co-pilot to help me implement features of the game.
+I used co-pilot to help me implement features of the game.
+
 I utilised the AI as an assistant in the following ways
-- Ask AI to explain the code to me, including code from the tutorials
-- Ask AI to help me debug the code to find issues
-- Get help with designing new features by asking for high level code structure
+- Asked AI to explain the code to me, including code from the tutorials, to improve my understanding of the langauge.
+- Asked AI to help me debug the code to find issues which were causing problems.
+- Get help with designing new features by asking for high level code structure, to act as a refrence when developing my own game.
 
 I learned using AI as a new skill
-One approach I found useful is to describe the behavior I wanted to implement and ask for suggestions and step by step guidance so that I understood each change I make to the project
-(This furthermore reinforced my skills as a developer and understanding of programming. )
->
+One approach I found useful, is to describe the behavior I wanted to implement into my game then asking for suggestions and step by step guidance so that I understood each change I make to the project.
 
+This allowed me to furthermore reinforce my skils as a developer and what good usage of AI looks like to integrate different work into my project.
 
 ### Animations
 
-<
-Animations is one of the key features of the project.
-I particurarly enjoyed building animation state machines and creating smooth transitions between animation states
-here's an example of animation state machine for player movement
-<screenshot of animation state machine here>
+Animations are one of the key features of the project. 
 
-The animations for Boss.....
-<boss animation state macin screenshot>
+Animations were by far one of the most challenging features to implement. Taking countless of hours from different tutorials to be able to implement withing my game. Having to adapt code to fit the animations and learning transitions all came with time but provided me with new skills after spending so long. In hindsight the implementation of animations not only improved my game but the my overall understanding of code and game engine builders.
+
+**Player**
+
+This an example of an animation tree for my player.
+
+<img width="631" height="355" alt="image" src="https://github.com/user-attachments/assets/3cc6a4a1-db69-4697-9aa8-29b378b613c4" />
+
+My player animation contains the following state.
+- Movement (Idle / Run)
+- Hurt
+- Die
+- Jump (Fall)
+- Wall Jump 
+- Double Jump (Fall)
+
+Multiple of the states were merged to provide more clarity.
+
+<img width="475" height="111" alt="Screenshot 2025-11-05 at 12 15 37 pm" src="https://github.com/user-attachments/assets/034f3eab-5a0e-4eb0-8a98-fce0fab811ba" />
+<img width="475" height="111" alt="Screenshot 2025-11-05 at 12 16 10 pm" src="https://github.com/user-attachments/assets/235bd5ec-1c4c-4157-a750-59777d0893c9" />
+
+For the movement rb.velocitys were used instead of addForce. Direct velocity control provides more responsive movement, enchancing the platformer experince.
+
+**Boss**
+
+The Boss uses a state machine for the Animations. This is different from the player as it allows for code to 'attach' to the animations. Allowing for certain code to trigger and run at certain animations.
+
+<img width="520" height="420" alt="image" src="https://github.com/user-attachments/assets/598680c7-3548-4730-b1bb-3f2e8ccd4756" /> <img width="329" height="420" alt="image" src="https://github.com/user-attachments/assets/f052f062-f87f-4b0f-9bad-79a352c45e06" />
+
+
 
 ### Physics
 
