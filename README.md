@@ -1,4 +1,4 @@
-# :space_invader: Game Design 2025 - Vladimir G :space_invader:
+# :space_invader: Game Design 2025 - Vladimir G :space_invader
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@
 
 ## About the Game
 
-This was a self-directed project creating a 2d game in Unity, over two terms working in class and at home. Facing many problems and overcoming them, I have managed to flesh out a playable state of the game. It is a game focusing on the player reaching a start point to an end point while avoiding obstacles.
+This was a self-directed project creating a 2d game in Unity, over two terms, working in class and at home. Facing many problems and overcoming them, I have managed to flesh out a playable state of the game. It is a game focusing on the player reaching a start point to an end point while avoiding obstacles.
 
 ### Story and Objective
 
@@ -169,17 +169,17 @@ Choosing a state machine for the boss allowed for more complex scenarios to occu
 
 ### Physics
 
->
-Physics is an important part of the game.
-Because it's a platformer game, the player character moves along the ground and jump on the platforms
-I have implemented jumps down through the platform the player stands on which required temporarily disabling colliders
-Wall jumps are a key feature of the game and player must use them to complete the game
-To implement the wall jump I had to control the character's physics, e.g. to implement sliding down the wall as part of wall jump.
-Finally, hitting enemies on the head required working with colliders as well. E.g. make the player bounce up after hitting the enemy.
-When the player is hit it is immune to futher attacks for a short time, implemented by disabling player's hit box.
->
+Without physics, a 2d platformer would be impossible to make. Physics is the backbone of the game; without physics, all of the following would not be possible.
+- Jumps using gravity
+- Going through platforms by temporarily disabling colliders
+- Wall Jumps by applying force and gravity
+- Wall slides, using mathF to change the effect of gravity
+- Once hitting enemies, apply a force to bounce the player back up
+- When the player is hit, adding i frames
 
-Without physics, a 2d platformer would be impossible to make. Physics is the backbone of the game; without physics, all of the following in the gif wouldn't be possible.
+<img width="336" height="579" alt="image" src="https://github.com/user-attachments/assets/6207c4f0-7e57-46f5-b254-2b3b754832f3" /> <img width="332" height="579" alt="image" src="https://github.com/user-attachments/assets/dba154e0-8d76-4708-9578-7901c2ee28ba" />
+
+
 
 ## Acknowledgements
 
