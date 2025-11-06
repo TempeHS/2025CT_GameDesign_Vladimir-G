@@ -114,7 +114,7 @@ I utilised the AI as an assistant in the following ways
 I learned to use AI as a new skill
 One approach I found useful is to describe the behaviour I wanted to implement into my game, then ask for suggestions and step-by-step guidance so that I understand each change I make to the project.
 
-This allowed me to further reinforce my skills as a developer and what good usage of AI looks like to integrate different work into my project.
+By using AI in a controlled enviroment, it allowed me to strengthen my understanding of Code and Unity, instead of replacing my learning.
 
 ### Animations
 
