@@ -201,6 +201,7 @@ Without physics, a 2d platformer would be impossible to make. Physics is the bac
 | Level Lock | https://www.youtube.com/watch?v=2XQsKNHk1vk |
 | Pause Menu | https://www.youtube.com/watch?v=MNUYe0PWNNs |
 | Scene Managment | https://www.youtube.com/watch?v=E25JWfeCFPA|
+| Game Launcher | https://www.youtube.com/watch?v=jBuyCtig9Jw |
 | Ground Enemy Attack | https://www.youtube.com/watch?v=KF3EVjOhN4c&list=PLSR2vNOypvs72jRSvOEWv448Tle9nDw1Z&index=1 |
 | Ground Enemy Player Attack | https://www.youtube.com/watch?v=ICVkhZ5s970&list=PLSR2vNOypvs72jRSvOEWv448Tle9nDw1Z&index=2|
 | Ground Enemy Patrol | https://www.youtube.com/watch?v=l7VyxIzAIAc&list=PLSR2vNOypvs72jRSvOEWv448Tle9nDw1Z&index=3|
